@@ -124,13 +124,23 @@ export default function IndustryExpertise() {
                               isEven ? "-translate-x-12" : "translate-x-12"
                             } translate-y-8`
                       }`}
+                      style={{
+                        width: "480px", // custom width
+                        height: "340px" // custom height
+                        // objectFit: "cover"
+                      }}
                     >
                       <Image
                         src={industry.image}
                         alt={industry.title}
-                        fill
-                        className="object-cover"
+                        // fill
+                        // className="object-cover"
                         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 800px"
+                        style={{
+                          width: "480px", // custom width
+                          height: "340px", // custom height
+                          objectFit: "cover"
+                        }}
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
                     </div>
@@ -144,6 +154,9 @@ export default function IndustryExpertise() {
                           isEven ? "translate-x-12" : "-translate-x-12"
                         } translate-y-8`
                   }`}
+                  style={{
+                    marginLeft: isEven ? -200 : 0
+                  }}
                 >
                   <h3 className="text-3xl font-bold text-white mb-4">
                     {industry.title}

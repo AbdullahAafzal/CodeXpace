@@ -6,17 +6,24 @@ import Link from "next/link";
 const services = [
   {
     // icon: "💻",
-    title: "Front & Backend Development",
-    slug: "front-backend-development",
+    title: "Web Development",
+    slug: "web-development",
     description: "Robust architecture for seamless digital experiences.",
     cta: "Discover Our Development Approach"
   },
   {
     // icon: "📱",
-    title: "Android & iOS App Development",
-    slug: "android-ios-app-development",
+    title: "Mobile App Development",
+    slug: "mobile-app-development",
     description: "Mobile-first solutions for any market.",
     cta: "Start Your Mobile App Journey"
+  },
+  {
+    // icon: "✅",
+    title: "Software Testing",
+    slug: "software-testing",
+    description: "QA that ensures speed, quality, and reliability.",
+    cta: "Ensure Quality"
   },
   {
     // icon: "⚙️",
@@ -27,33 +34,66 @@ const services = [
   },
   {
     // icon: "🧠",
-    title: "AI & Machine Learning",
+    title: "AI & Machine Learning Development",
     slug: "ai-machine-learning-development",
     description: "Unlock business intelligence and automation.",
     cta: "See AI in Action"
   },
-
   {
     // icon: "☁️",
-    title: "DevOps & Cloud",
+    title: "Devops and Cloud",
     slug: "devops-cloud-services",
     description: "Faster releases, stable infrastructure, lower costs.",
     cta: "Optimize with DevOps"
   },
   {
-    // icon: "✅",
-    title: "Software Testing",
-    slug: "software-testing",
-    description: "QA that ensures speed, quality, and reliability.",
-    cta: "Ensure Quality"
-  },
-
-  {
     // icon: "🏢",
-    title: "Scalable Enterprise Software",
-    slug: "enterprise-software-development",
-    description: "Big solutions for big businesses.",
-    cta: "Scale Enterprise Solutions"
+    title: "SAAS Development",
+    slug: "saas-development",
+    description: "Scalable software-as-a-service solutions for modern businesses.",
+    cta: "Explore SAAS Solutions"
+  },
+  {
+    // icon: "🚀",
+    title: "MVP Development",
+    slug: "mvp-development",
+    description: "Validate ideas and launch quicker, smarter.",
+    cta: "Start Your MVP"
+  },
+  {
+    // icon: "🎨",
+    title: "Graphic Designing",
+    slug: "graphic-designing",
+    description: "Creative visual solutions that make your brand stand out.",
+    cta: "See Our Designs"
+  },
+  {
+    // icon: "✨",
+    title: "UI/UX Designing",
+    slug: "ui-ux-designing",
+    description: "User-centered design that creates exceptional experiences.",
+    cta: "Explore Design Services"
+  },
+  {
+    // icon: "💼",
+    title: "IT Consultation",
+    slug: "it-consultation",
+    description: "Expert guidance to transform your technology strategy.",
+    cta: "Get Consultation"
+  },
+  {
+    // icon: "📲",
+    title: "Enterprise Mobility Solutions",
+    slug: "enterprise-mobility-solutions",
+    description: "Mobile solutions that empower your enterprise workforce.",
+    cta: "Discover Mobility Solutions"
+  },
+  {
+    // icon: "⛓️",
+    title: "Blockchain",
+    slug: "blockchain-development",
+    description: "Secure, scalable decentralized apps and platforms.",
+    cta: "Explore Blockchain"
   }
 ];
 

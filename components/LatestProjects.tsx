@@ -86,21 +86,41 @@ const projects = [
     image: zedImage,
     type: "Developer Tools"
   }
-  // {
-  //   id: "zing",
-  //   name: "Zing",
-  //   description:
-  //     "A dynamic music discovery and streaming platform that brings music lovers together. We created an immersive experience with personalized playlists, social sharing, live streaming capabilities, and high-quality audio that makes every listening session special.",
-  //   image: zingImage,
-  //   type: "Music"
-  // }
 ];
+
+const PROJECTS_PER_PAGE = 5;
 
 export default function LatestProjects() {
   const [selectedProject, setSelectedProject] = useState(0);
+  const [currentPage, setCurrentPage] = useState(0);
+
+  const totalPages = Math.ceil(projects.length / PROJECTS_PER_PAGE);
+  const startIndex = currentPage * PROJECTS_PER_PAGE;
+  const endIndex = startIndex + PROJECTS_PER_PAGE;
+  const visibleProjects = projects.slice(startIndex, endIndex);
+
+  const handleNextPage = () => {
+    if (currentPage < totalPages - 1) {
+      setCurrentPage(currentPage + 1);
+      // Reset selected project to first item of new page
+      setSelectedProject(startIndex + PROJECTS_PER_PAGE);
+    }
+  };
+
+  const handlePrevPage = () => {
+    if (currentPage > 0) {
+      setCurrentPage(currentPage - 1);
+      // Reset selected project to first item of previous page
+      setSelectedProject(startIndex - PROJECTS_PER_PAGE);
+    }
+  };
+
+  const handleProjectSelect = (projectIndex: number) => {
+    setSelectedProject(projectIndex);
+  };
 
   return (
-    <section className="py-32 bg-black relative">
+    <section id="latest-projects" className="py-32 bg-black relative">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-24">
           Latest{" "}
@@ -109,55 +129,119 @@ export default function LatestProjects() {
           </span>
         </h2>
 
-        <div className="grid grid-cols-1 lg:grid-cols-[2fr_4fr_4fr] gap-12 items-start">
-          {/* Left Side - Project List (20%) */}
-          <div className="flex flex-col">
-            <div className="space-y-1">
-              {projects.map((project, index) => (
-                <button
-                  key={project.id}
-                  onClick={() => setSelectedProject(index)}
-                  className={`w-full text-left p-4 rounded-lg transition-all duration-300 ${
-                    selectedProject === index
-                      ? "bg-red-500/20"
-                      : "bg-transparent hover:bg-red-500/8"
-                  }`}
-                >
-                  <span
-                    className={`text-sm font-medium transition-colors ${
-                      selectedProject === index
-                        ? "text-red-400"
-                        : "text-gray-400"
+        <div className="grid grid-cols-1 lg:grid-cols-[300px_1fr] gap-12 items-start">
+          {/* Left Side - Project List with Pagination */}
+          <div className="flex flex-col bg-black/40 backdrop-blur-sm">
+            <div className="space-y-0 flex-1 pt-4">
+              {visibleProjects.map((project, index) => {
+                const globalIndex = startIndex + index;
+                const isSelected = selectedProject === globalIndex;
+                return (
+                  <button
+                    key={project.id}
+                    onClick={() => handleProjectSelect(globalIndex)}
+                    className={`w-full text-left px-4 py-4 transition-all duration-300 relative ${
+                      isSelected
+                        ? "bg-red-500/20"
+                        : "bg-transparent hover:bg-red-500/10"
                     }`}
                   >
-                    {project.name}
-                  </span>
-                </button>
-              ))}
+                    {isSelected && (
+                      <div className="absolute left-0 top-0 bottom-0 w-1 bg-red-500"></div>
+                    )}
+                    <span
+                      className={`text-sm font-medium transition-colors ${
+                        isSelected
+                          ? "text-white"
+                          : "text-gray-400 hover:text-gray-300"
+                      }`}
+                    >
+                      {project.name}
+                    </span>
+                  </button>
+                );
+              })}
+            </div>
+
+            {/* Pagination Controls */}
+            <div className="flex items-center justify-center gap-4 py-4 bg-black/60">
+              <button
+                onClick={handlePrevPage}
+                disabled={currentPage === 0}
+                className={`p-2 rounded transition-all ${
+                  currentPage === 0
+                    ? "text-gray-600 cursor-not-allowed"
+                    : "text-gray-400 hover:text-red-400 hover:bg-red-500/10"
+                }`}
+                aria-label="Previous page"
+              >
+                <svg
+                  className="w-5 h-5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M15 19l-7-7 7-7"
+                  />
+                </svg>
+              </button>
+              <button
+                onClick={handleNextPage}
+                disabled={currentPage >= totalPages - 1}
+                className={`p-2 rounded transition-all ${
+                  currentPage >= totalPages - 1
+                    ? "text-gray-600 cursor-not-allowed"
+                    : "text-gray-400 hover:text-red-400 hover:bg-red-500/10"
+                }`}
+                aria-label="Next page"
+              >
+                <svg
+                  className="w-5 h-5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M9 5l7 7-7 7"
+                  />
+                </svg>
+              </button>
             </div>
           </div>
 
-          {/* Middle Section - Description (40%) */}
-          <div className="flex flex-col justify-start space-y-6">
-            <p className="text-base md:text-lg font-normal text-gray-300 leading-relaxed">
-              {projects[selectedProject].description}
-            </p>
-            <button className="w-full md:w-auto px-5 py-2 bg-transparent border border-red-500/60 text-red-400 rounded-lg font-medium hover:bg-red-500/10 hover:border-red-500 transition-all duration-300 text-xs self-start">
-              View project
-            </button>
-          </div>
+          {/* Right Side - Content with Text and Images */}
+          <div className="flex flex-col bg-black/40 backdrop-blur-sm">
+            <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-start">
+              {/* Text Content - Small text and button with more width */}
+              <div className="flex-[1.5] space-y-4 pt-4">
+                <p className="text-sm md:text-base font-normal text-gray-300 leading-relaxed">
+                  {projects[selectedProject].description}
+                </p>
+                <button className="w-full md:w-auto px-6 py-2.5 bg-transparent text-red-400 rounded-lg font-medium hover:bg-red-500/10 transition-all duration-300 text-sm">
+                  View project
+                </button>
+              </div>
 
-          {/* Right Side - Project Showcase (40%) */}
-          <div className="flex items-start">
-            <div className="relative group w-full">
-              <div className="rounded-2xl overflow-hidden aspect-[3/4] relative">
-                <Image
-                  src={projects[selectedProject].image}
-                  alt={projects[selectedProject].name}
-                  fill
-                  className="object-contain transition-transform duration-700 group-hover:scale-105"
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 40vw, 400px"
-                />
+              {/* Images horizontally aligned with text - Made smaller */}
+              <div className="flex-shrink-0 w-full lg:w-auto pt-4">
+                <div className="relative group">
+                  <div className="rounded-xl overflow-hidden aspect-[3/4] relative w-full lg:w-[350px]">
+                    <Image
+                      src={projects[selectedProject].image}
+                      alt={projects[selectedProject].name}
+                      fill
+                      className="object-contain transition-transform duration-700 group-hover:scale-105"
+                      sizes="(max-width: 768px) 100vw, 350px"
+                    />
+                  </div>
+                </div>
               </div>
             </div>
           </div>

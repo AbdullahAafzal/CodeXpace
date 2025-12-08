@@ -6,9 +6,29 @@ import Link from 'next/link';
 interface ServiceHeroProps {
   title: string;
   subtitle: string;
+  slug?: string;
 }
 
-export default function ServiceHero({ title, subtitle }: ServiceHeroProps) {
+// Map service slugs to image filenames
+const getServiceImage = (slug?: string): string | null => {
+  if (!slug) return null;
+  
+  const imageMap: Record<string, string> = {
+    'ai-machine-learning-development': '/assets/Services/AI.png',
+    'custom-software-development': '/assets/Services/CustomSoftwareDevelopment.png',
+    'devops-cloud-services': '/assets/Services/Devsops.png',
+    'mvp-development': '/assets/Services/MVP.png',
+    'front-backend-development': '/assets/Services/Web.png',
+    'software-testing': '/assets/Services/Software.png',
+    'enterprise-software-development': '/assets/Services/Software.png',
+    'android-ios-app-development': '/assets/Services/Web.png', // Using Web.png as fallback
+  };
+  
+  return imageMap[slug] || null;
+};
+
+export default function ServiceHero({ title, subtitle, slug }: ServiceHeroProps) {
+  const backgroundImage = getServiceImage(slug);
   const [isVisible, setIsVisible] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
 
@@ -34,19 +54,32 @@ export default function ServiceHero({ title, subtitle }: ServiceHeroProps) {
   }, []);
 
   return (
-    <section className="relative min-h-[70vh] flex items-center justify-center overflow-hidden">
+    <section className="relative h-screen flex items-center justify-center overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0 bg-black">
+        {/* Background image */}
+        {backgroundImage && (
+          <div className="absolute inset-0">
+            <div
+              className="w-full h-full"
+              style={{
+                backgroundImage: `url(${backgroundImage})`,
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+              }}
+            ></div>
+          </div>
+        )}
         <div
           className="absolute inset-0"
           style={{
-            background: 'linear-gradient(135deg, rgba(0, 0, 0, 1) 0%, rgba(20, 0, 0, 0.98) 30%, rgba(10, 0, 0, 0.99) 60%, rgba(0, 0, 0, 1) 100%)'
+            background: 'linear-gradient(135deg, rgba(0, 0, 0, 0.7) 0%, rgba(20, 0, 0, 0.6) 30%, rgba(10, 0, 0, 0.65) 60%, rgba(0, 0, 0, 0.7) 100%)'
           }}
         ></div>
         <div
           className="absolute inset-0"
           style={{
-            background: 'radial-gradient(ellipse at center, rgba(20, 20, 20, 0.4) 0%, rgba(0, 0, 0, 0.98) 60%)'
+            background: 'radial-gradient(ellipse at center, rgba(20, 20, 20, 0.3) 0%, rgba(0, 0, 0, 0.7) 60%)'
           }}
         ></div>
         <div
@@ -55,18 +88,6 @@ export default function ServiceHero({ title, subtitle }: ServiceHeroProps) {
             background: 'radial-gradient(ellipse at bottom right, rgba(127, 29, 29, 0.15) 0%, transparent 50%)'
           }}
         ></div>
-        {/* Blurred background image */}
-        <div className="absolute inset-0 opacity-20">
-          <div
-            className="w-full h-full"
-            style={{
-              backgroundImage: 'url(https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1920&h=1080&fit=crop)',
-              backgroundSize: 'cover',
-              backgroundPosition: 'center',
-              filter: 'blur(40px)',
-            }}
-          ></div>
-        </div>
       </div>
 
       {/* Content */}

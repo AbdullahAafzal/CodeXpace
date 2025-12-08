@@ -132,7 +132,21 @@ export default function Hero() {
           automation, tailored to meet your unique needs.
         </p>
         <a
-          href="#contact"
+          href="#latest-projects"
+          onClick={(e) => {
+            e.preventDefault();
+            const element = document.getElementById('latest-projects');
+            if (element) {
+              const headerOffset = 80; // Header height + some padding
+              const elementPosition = element.getBoundingClientRect().top;
+              const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+              window.scrollTo({
+                top: offsetPosition,
+                behavior: 'smooth'
+              });
+            }
+          }}
           className="inline-flex items-center space-x-2 bg-gradient-to-r from-red-600 to-red-500 hover:from-red-500 hover:to-red-400 text-white px-6 py-3 rounded-lg font-semibold text-sm md:text-base transition-all shadow-lg shadow-red-500/20 hover:shadow-xl hover:shadow-red-500/30 hover:scale-105 transform uppercase tracking-wide font-sans"
         >
           <span>See What We've Built</span>

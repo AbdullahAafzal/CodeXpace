@@ -1,37 +1,30 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 
 const servicesList = [
-  { name: "Front & Backend Development", slug: "front-backend-development" },
-  {
-    name: "Android & iOS App Development",
-    slug: "android-ios-app-development"
-  },
+  { name: "Web Development", slug: "web-development" },
+  { name: "Mobile App Development", slug: "mobile-app-development" },
   { name: "Software Testing", slug: "software-testing" },
-
   { name: "Custom Software Development", slug: "custom-software-development" },
-  {
-    name: "AI & Machine Learning Development",
-    slug: "ai-machine-learning-development"
-  },
-  // { name: "Blockchain Development", slug: "blockchain-development" },
-
-  { name: "DevOps & Cloud Services", slug: "devops-cloud-services" },
-  { name: "System Integration", slug: "system-integration" },
+  { name: "AI & Machine Learning Development", slug: "ai-machine-learning-development" },
+  { name: "Devops and Cloud", slug: "devops-cloud-services" },
+  { name: "SAAS Development", slug: "saas-development" },
   { name: "MVP Development", slug: "mvp-development" },
-  {
-    name: "Scalable Enterprise Software",
-    slug: "enterprise-software-development"
-  }
+  { name: "Graphic Designing", slug: "graphic-designing" },
+  { name: "UI/UX Designing", slug: "ui-ux-designing" },
+  { name: "IT Consultation", slug: "it-consultation" },
+  { name: "Enterprise Mobility Solutions", slug: "enterprise-mobility-solutions" },
+  { name: "Blockchain", slug: "blockchain-development" }
 ];
 
 export default function Header() {
   const [isServicesOpen, setIsServicesOpen] = useState(false);
   const pathname = usePathname();
+  const closeTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   const isActive = (path: string) => {
     if (path === "/") {
@@ -39,6 +32,28 @@ export default function Header() {
     }
     return pathname.startsWith(path);
   };
+
+  const handleMouseEnter = () => {
+    if (closeTimeoutRef.current) {
+      clearTimeout(closeTimeoutRef.current);
+      closeTimeoutRef.current = null;
+    }
+    setIsServicesOpen(true);
+  };
+
+  const handleMouseLeave = () => {
+    closeTimeoutRef.current = setTimeout(() => {
+      setIsServicesOpen(false);
+    }, 300); // 300ms delay before closing
+  };
+
+  useEffect(() => {
+    return () => {
+      if (closeTimeoutRef.current) {
+        clearTimeout(closeTimeoutRef.current);
+      }
+    };
+  }, []);
 
   return (
     <header className="relative z-50 backdrop-blur-2xl">
@@ -52,15 +67,14 @@ export default function Header() {
       <nav className="relative container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <Link href="/" className="flex items-center space-x-2">
+          <Link href="/" className="flex items-center">
             <Image
-              src="/logo.jpeg"
+              src="/logo.png"
               alt="CodeXpace Logo"
-              width={32}
-              height={32}
+              width={150}
+              height={40}
               className="object-contain"
             />
-            <span className="text-white text-base font-bold">CodeXpace</span>
           </Link>
 
           <div className="hidden md:flex items-center space-x-6">
@@ -84,8 +98,8 @@ export default function Header() {
             </Link>
             <div
               className="relative"
-              onMouseEnter={() => setIsServicesOpen(true)}
-              onMouseLeave={() => setIsServicesOpen(false)}
+              onMouseEnter={handleMouseEnter}
+              onMouseLeave={handleMouseLeave}
             >
               <button
                 className={`font-semibold text-sm transition-colors flex items-center space-x-1 ${
@@ -116,6 +130,8 @@ export default function Header() {
                     boxShadow:
                       "0 8px 32px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(220, 38, 38, 0.2)"
                   }}
+                  onMouseEnter={handleMouseEnter}
+                  onMouseLeave={handleMouseLeave}
                 >
                   {servicesList.map((service, index) => (
                     <Link
@@ -147,7 +163,7 @@ export default function Header() {
                   : "text-white hover:text-red-400"
               }`}
             >
-              Join Our Team
+              Careers
             </Link>
           </div>
 

@@ -73,9 +73,36 @@ const getIcon = (tech: string) => {
   return iconMap[tech.toLowerCase()] || reactIcon; // fallback to react icon
 };
 
+// Format tech name for display
+const formatTechName = (tech: string) => {
+  const nameMap: Record<string, string> = {
+    nextjs: "Next.js",
+    postgresql: "PostgreSQL",
+    typescript: "TypeScript",
+    javascript: "JavaScript",
+    kubernetes: "Kubernetes",
+    mongodb: "MongoDB",
+    aws: "AWS",
+    azure: "Azure",
+    gcp: "GCP",
+    docker: "Docker",
+    vue: "Vue.js",
+    angular: "Angular",
+    react: "React",
+    node: "Node.js",
+    python: "Python",
+    php: "PHP",
+    mysql: "MySQL",
+    redis: "Redis",
+    django: "Django",
+    express: "Express",
+  };
+  return nameMap[tech.toLowerCase()] || tech.charAt(0).toUpperCase() + tech.slice(1);
+};
+
 export default function TechStack() {
   const sliderRef = useRef<HTMLDivElement>(null);
-  const itemWidth = 192; // 168px width + 24px gap
+  const itemWidth = 184; // 160px width + 24px gap (gap-6)
 
   useEffect(() => {
     const slider = sliderRef.current;
@@ -152,21 +179,23 @@ export default function TechStack() {
           {duplicatedStack.map((tech, index) => (
             <div
               key={`${tech}-${index}`}
-              className="flex-shrink-0 bg-black border border-red-500/50 rounded-full px-6 py-4 hover:border-red-500 hover:shadow-xl hover:shadow-red-500/30 hover:-translate-y-1 transition-all duration-300 transform flex items-center justify-center"
+              className="flex-shrink-0 flex flex-col items-center justify-center gap-2 hover:-translate-y-1 transition-all duration-300 transform"
               style={{
-                width: "168px",
-                height: "72px",
-                boxShadow:
-                  "0 4px 12px rgba(220, 38, 38, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.1)"
+                width: "160px",
               }}
             >
-              <Image
-                src={getIcon(tech)}
-                alt={tech}
-                width={40}
-                height={40}
-                className="object-contain"
-              />
+              <div className="flex items-center justify-center" style={{ height: "80px" }}>
+                <Image
+                  src={getIcon(tech)}
+                  alt={tech}
+                  width={60}
+                  height={60}
+                  className="object-contain"
+                />
+              </div>
+              <span className="text-white font-bold text-sm text-center">
+                {formatTechName(tech)}
+              </span>
             </div>
           ))}
         </div>

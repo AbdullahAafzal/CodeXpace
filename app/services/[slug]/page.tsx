@@ -1,11 +1,7 @@
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import ServiceHero from '@/components/services/ServiceHero';
-import ServiceIntro from '@/components/services/ServiceIntro';
-import WhyChooseService from '@/components/services/WhyChooseService';
 import ServiceCapabilities from '@/components/services/ServiceCapabilities';
-import ServiceProcess from '@/components/services/ServiceProcess';
-import MaintenanceSupport from '@/components/services/MaintenanceSupport';
 import ServiceFAQs from '@/components/services/ServiceFAQs';
 
 const serviceData: Record<string, any> = {
@@ -46,7 +42,7 @@ const serviceData: Record<string, any> = {
     ],
   },
   'blockchain-development': {
-    title: 'Blockchain Development',
+    title: 'Blockchain',
     subtitle: 'Secure, scalable decentralized apps and platforms.',
     intro: 'Leverage blockchain technology to build transparent, secure, and decentralized applications. We develop smart contracts, DApps, and blockchain infrastructure for various industries.',
     whyChoose: [
@@ -63,8 +59,8 @@ const serviceData: Record<string, any> = {
       'DeFi solutions',
     ],
   },
-  'front-backend-development': {
-    title: 'Front & Backend Development',
+  'web-development': {
+    title: 'Web Development',
     subtitle: 'Create robust, scalable web solutions for your business.',
     intro: 'We build powerful web applications with modern frontend frameworks and robust backend architectures. Our full-stack expertise ensures seamless user experiences and reliable performance.',
     whyChoose: [
@@ -81,8 +77,8 @@ const serviceData: Record<string, any> = {
       'Performance optimization',
     ],
   },
-  'android-ios-app-development': {
-    title: 'Android & iOS App Development',
+  'mobile-app-development': {
+    title: 'Mobile App Development',
     subtitle: 'Mobile-first solutions for any market.',
     intro: 'Create engaging mobile experiences with native and cross-platform applications. We develop high-performance mobile apps that users love and businesses rely on.',
     whyChoose: [
@@ -100,7 +96,7 @@ const serviceData: Record<string, any> = {
     ],
   },
   'devops-cloud-services': {
-    title: 'DevOps & Cloud Services',
+    title: 'Devops and Cloud',
     subtitle: 'Faster releases, stable infrastructure, lower costs.',
     intro: 'Streamline your development workflow and infrastructure with our DevOps expertise. We help you deploy faster, scale efficiently, and maintain reliable cloud environments.',
     whyChoose: [
@@ -171,38 +167,111 @@ const serviceData: Record<string, any> = {
       'Scalable architecture',
     ],
   },
-  'enterprise-software-development': {
-    title: 'Enterprise Software Development',
-    subtitle: 'Big solutions for big businesses.',
-    intro: 'Enterprise-grade software solutions designed for scale, security, and performance. We build robust systems that support your organization\'s growth and operations.',
+  'saas-development': {
+    title: 'SAAS Development',
+    subtitle: 'Scalable software-as-a-service solutions for modern businesses.',
+    intro: 'Build powerful SaaS platforms that scale with your business. We develop cloud-based software solutions that deliver value to your customers while ensuring reliability and performance.',
     whyChoose: [
-      'Enterprise Architecture',
-      'Scalability & Performance',
-      'Security & Compliance',
-      '24/7 Support',
+      'Scalable Architecture',
+      'Multi-Tenant Solutions',
+      'Subscription Management',
+      'Cloud-Native Development',
     ],
     capabilities: [
-      'Enterprise application development',
-      'System architecture design',
-      'Security implementation',
-      'Compliance and governance',
-      'Enterprise integration',
+      'SaaS platform development',
+      'Multi-tenant architecture',
+      'Subscription billing systems',
+      'API and integration development',
+      'Cloud infrastructure setup',
+    ],
+  },
+  'graphic-designing': {
+    title: 'Graphic Designing',
+    subtitle: 'Creative visual solutions that make your brand stand out.',
+    intro: 'Transform your brand identity with stunning graphic design. We create compelling visual content that communicates your message effectively and engages your audience.',
+    whyChoose: [
+      'Creative Excellence',
+      'Brand Consistency',
+      'Modern Design Trends',
+      'Professional Quality',
+    ],
+    capabilities: [
+      'Logo and brand identity design',
+      'Marketing materials design',
+      'Social media graphics',
+      'Print design services',
+      'Digital asset creation',
+    ],
+  },
+  'ui-ux-designing': {
+    title: 'UI/UX Designing',
+    subtitle: 'User-centered design that creates exceptional experiences.',
+    intro: 'Design intuitive and engaging user interfaces that delight users and drive conversions. Our UX research and UI design expertise ensures your product is both beautiful and functional.',
+    whyChoose: [
+      'User-Centered Approach',
+      'Modern Design Systems',
+      'Usability Testing',
+      'Responsive Design',
+    ],
+    capabilities: [
+      'User research and personas',
+      'Wireframing and prototyping',
+      'UI/UX design systems',
+      'Interaction design',
+      'Usability testing and optimization',
+    ],
+  },
+  'it-consultation': {
+    title: 'IT Consultation',
+    subtitle: 'Expert guidance to transform your technology strategy.',
+    intro: 'Get strategic technology advice from experienced consultants. We help you make informed decisions about your IT infrastructure, software solutions, and digital transformation initiatives.',
+    whyChoose: [
+      'Expert Guidance',
+      'Strategic Planning',
+      'Technology Assessment',
+      'Cost Optimization',
+    ],
+    capabilities: [
+      'Technology strategy consulting',
+      'IT infrastructure assessment',
+      'Digital transformation planning',
+      'Software selection guidance',
+      'Technology roadmap development',
+    ],
+  },
+  'enterprise-mobility-solutions': {
+    title: 'Enterprise Mobility Solutions',
+    subtitle: 'Mobile solutions that empower your enterprise workforce.',
+    intro: 'Enable your workforce with enterprise-grade mobile solutions. We develop secure, scalable mobile applications and platforms that enhance productivity and streamline business operations.',
+    whyChoose: [
+      'Enterprise Security',
+      'Scalable Solutions',
+      'Cross-Platform Support',
+      'Integration Capabilities',
+    ],
+    capabilities: [
+      'Enterprise mobile app development',
+      'Mobile device management',
+      'BYOD solutions',
+      'Mobile security implementation',
+      'Enterprise app integration',
     ],
   },
 };
 
+// Backward compatibility for old slugs
+serviceData['front-backend-development'] = serviceData['web-development'];
+serviceData['android-ios-app-development'] = serviceData['mobile-app-development'];
+serviceData['enterprise-software-development'] = serviceData['saas-development'];
+
 export default function ServicePage({ params }: { params: { slug: string } }) {
-  const service = serviceData[params.slug] || serviceData['front-backend-development'];
+  const service = serviceData[params.slug] || serviceData['web-development'];
 
   return (
     <main className="min-h-screen bg-black">
       <Header />
-      <ServiceHero title={service.title} subtitle={service.subtitle} />
-      <ServiceIntro content={service.intro} />
-      <WhyChooseService items={service.whyChoose} />
+      <ServiceHero title={service.title} subtitle={service.subtitle} slug={params.slug} />
       <ServiceCapabilities items={service.capabilities} />
-      <ServiceProcess />
-      <MaintenanceSupport />
       <ServiceFAQs />
       <Footer />
     </main>
