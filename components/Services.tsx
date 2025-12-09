@@ -141,7 +141,7 @@ export default function Services() {
   }, [showAll]);
 
   return (
-    <section className="py-20 bg-black relative">
+    <section id="services" className="py-20 bg-black relative">
       <div className="relative container mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-4xl md:text-5xl font-bold text-center mb-16">
           Excellence - When it{" "}
@@ -195,14 +195,30 @@ export default function Services() {
             </div>
           ))}
         </div>
-        {!showAll && services.length > 6 && (
+        {services.length > 6 && (
           <div className="flex justify-center mt-12">
-            <button
-              onClick={() => setShowAll(true)}
-              className="px-8 py-3 bg-transparent border border-red-500/60 text-red-400 rounded-lg font-medium hover:bg-red-500/10 hover:border-red-500 transition-all duration-300"
-            >
-              Show more
-            </button>
+            {!showAll ? (
+              <button
+                onClick={() => setShowAll(true)}
+                className="px-8 py-3 bg-transparent border border-red-500/60 text-red-400 rounded-lg font-medium hover:bg-red-500/10 hover:border-red-500 transition-all duration-300"
+              >
+                Show more
+              </button>
+            ) : (
+              <button
+                onClick={() => {
+                  setShowAll(false);
+                  // Scroll to top of services section when collapsing
+                  window.scrollTo({
+                    top: document.getElementById('services')?.offsetTop || 0,
+                    behavior: 'smooth'
+                  });
+                }}
+                className="px-8 py-3 bg-transparent border border-red-500/60 text-red-400 rounded-lg font-medium hover:bg-red-500/10 hover:border-red-500 transition-all duration-300"
+              >
+                Show less
+              </button>
+            )}
           </div>
         )}
       </div>

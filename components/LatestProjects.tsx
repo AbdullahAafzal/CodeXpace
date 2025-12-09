@@ -8,7 +8,7 @@ import HT from "../assets/projects/HT.png";
 import Liberty from "../assets/projects/Liberty.png";
 import roadTrippersImage from "../assets/projects/RoadTrippers.png";
 import Luminary from "../assets/projects/Luminary.png";
-import telegraphyImage from "../assets/projects/Telegraphy.png";
+import telegraphyImage from "../assets/projects/Palplug.png";
 import Dillion from "../assets/projects/Dillion.png";
 import coder from "../assets/projects/coder.png";
 import zingImage from "../assets/projects/Zing.png";
@@ -69,8 +69,7 @@ const projects = [
     id: "Hammers-Tounges",
     name: "Hammers & Tounges",
     description:
-      "Hammers & Tongues Auction is a digital auction platform enabling users to bid, buy, and sell products in real time with secure transactions and transparent pricing. We built a system featuring live bidding, smart inventory management, and instant notifications to enhance user engagement. With seamless mobile access and scalable architecture, the platform delivers a fast, secure, and modern auction experience.
-",
+      "Hammers & Tongues Auction is a digital auction platform enabling users to bid, buy, and sell products in real time with secure transactions and transparent pricing. We built a system featuring live bidding, smart inventory management, and instant notifications to enhance user engagement. With seamless mobile access and scalable architecture, the platform delivers a fast, secure, and modern auction experience.",
     image: HT,
     type: "Healthcare"
   },
@@ -152,9 +151,9 @@ export default function LatestProjects() {
   };
 
   return (
-    <section id="latest-projects" className="py-32 bg-black relative">
+    <section id="latest-projects" className="pt-12 pb-0 bg-black relative">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-24">
+        <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
           Latest{" "}
           <span className="bg-gradient-to-r from-red-500 via-red-400 to-red-500 bg-clip-text text-transparent">
             Projects

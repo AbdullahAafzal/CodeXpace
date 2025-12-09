@@ -27,7 +27,11 @@ const getServiceImage = (slug?: string): string | null => {
     "enterprise-software-development": "/assets/Services/Software.png",
     "mobile-app-development": "/assets/Services/App.png",
     "android-ios-app-development": "/assets/Services/App.png",
-    "it-consultation": "/assets/Services/IT.png"
+    "it-consultation": "/assets/Services/IT.png",
+    "ui-ux-designing": "/assets/Services/uiux.png",
+    "graphic-designing": "/assets/Services/Graphics.png",
+    "blockchain-development": "/assets/Services/blockchain.png",
+    "enterprise-mobility-solutions": "/assets/Services/enterprise.png"
   };
 
   return imageMap[slug] || null;
@@ -83,7 +87,7 @@ export default function ServiceHero({
   };
 
   return (
-    <section className="relative h-screen flex items-center justify-center overflow-hidden">
+    <section className="relative h-[93vh] flex items-center justify-center overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0 bg-black">
         {/* Background image */}

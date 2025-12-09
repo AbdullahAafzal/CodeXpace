@@ -88,7 +88,7 @@ export default function IndustryExpertise() {
   }, []);
 
   return (
-    <section className="py-20 bg-black relative" style={{ overflowX: 'hidden', overflowY: 'visible' }}>
+    <section className="pt-6 pb-20 bg-black relative" style={{ overflowX: 'hidden', overflowY: 'visible' }}>
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-4xl md:text-5xl font-bold text-center mb-16">
           Where We Exceed{" "}
