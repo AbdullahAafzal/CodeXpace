@@ -141,3 +141,15 @@ body {
   }
 }
 
+/* Ensure contact form is always visible */
+#contact {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  position: relative !important;
+  z-index: 10 !important;
+  overflow: visible !important;
+  height: auto !important;
+  min-height: 600px !important;
+}
+
