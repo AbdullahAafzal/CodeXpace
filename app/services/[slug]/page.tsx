@@ -6,6 +6,136 @@ import ServiceCapabilities from "@/components/services/ServiceCapabilities";
 import OurProcess from "@/components/services/OurProcess";
 import ServiceFAQs from "@/components/services/ServiceFAQs";
 
+// Custom process steps for mobile app development
+const mobileAppProcessSteps = [
+  {
+    number: 1,
+    title: "Consulting & Strategy",
+    description:
+      "We analyze your app concept, define objectives, and devise a tailored development plan to ensure your project's success and growth in the competitive market."
+  },
+  {
+    number: 2,
+    title: "UI/UX Design",
+    description:
+      "Our expert designers craft visually stunning, user-centric interfaces, prioritizing seamless navigation and elevated user engagement for an exceptional experience."
+  },
+  {
+    number: 3,
+    title: "Engineering & Delivery",
+    description:
+      "Our proficient developers utilize cutting-edge technologies and best practices to create high-quality, scalable apps that cater to your unique requirements."
+  },
+  {
+    number: 4,
+    title: "QA & Optimization",
+    description:
+      "We meticulously test your app, validating functionality, compatibility, and performance to deliver a polished, error-free product that exceeds expectations."
+  },
+  {
+    number: 5,
+    title: "Deployment",
+    description:
+      "Prepare for the launch, beta live, and live the project on the respective app store(s)."
+  },
+  {
+    number: 6,
+    title: "Support",
+    description:
+      "Software issues resolution to ensure quality and complete functionality, as well as a retrospective analysis to prevent further issues."
+  },
+  {
+    number: 7,
+    title: "Maintenance/Enhancement",
+    description:
+      "Providing on-demand complete software maintenance, feedback monitoring, and functionality enhancement services."
+  }
+];
+
+// Custom process steps for software testing
+const softwareTestingProcessSteps = [
+  {
+    number: 1,
+    title: "Consulting & Strategy",
+    description:
+      "We collaborate with you to understand your project requirements, goals, and constraints. This enables us to develop a tailored software testing strategy that aligns with your objectives and addresses the unique challenges of your project."
+  },
+  {
+    number: 2,
+    title: "Test Case Analysis & Designing",
+    description:
+      "Our team of experts carefully analyzes your software's specifications and designs detailed test cases to cover all possible scenarios. This identifies potential issues and helps validate that your software meets the desired requirements and user expectations."
+  },
+  {
+    number: 3,
+    title: "Test Implementation",
+    description:
+      "We execute meticulously designed test cases across various testing phases, such as unit, integration, system, and acceptance testing. Our expert testers efficiently manage the testing process, using the latest tools and techniques to ensure accurate and reliable results."
+  },
+  {
+    number: 4,
+    title: "Result Analysis & Accountability",
+    description:
+      "We analyze the test results, identify areas for improvement, and provide actionable insights to enhance your software's quality. Our team ensures accountability by informing you of regular progress updates and comprehensive reports, enabling you to make informed decisions and achieve your project goals."
+  }
+];
+
+// Custom process steps for DevOps
+const devopsProcessSteps = [
+  {
+    number: 1,
+    title: "Planning and Analysis",
+    description:
+      "Our engineers work with you to understand your business goals and requirements and develop a comprehensive plan for your DevOps implementation. Our team analyzes your existing infrastructure and processes and identifies areas for improvement."
+  },
+  {
+    number: 2,
+    title: "Continuous Integration and Delivery",
+    description:
+      "We set up automated CI/CD pipelines to enable faster and more reliable software delivery. This step involves building, testing, and deploying your code for automation and optimization."
+  },
+  {
+    number: 3,
+    title: "Monitoring and Logging",
+    description:
+      "We implement robust monitoring and logging solutions to ensure your software performs as expected. This step involves setting up alerts and notifications, analyzing logs, and identifying potential issues before they become critical."
+  },
+  {
+    number: 4,
+    title: "Continuous Improvement",
+    description:
+      "With a strong belief in continuous improvement, we are committed to helping you optimize your DevOps processes over time. This step involves analyzing metrics and feedback, identifying areas for improvement, and implementing changes to increase efficiency and quality."
+  }
+];
+
+// Custom process steps for UI/UX Designing
+const uiUxProcessSteps = [
+  {
+    number: 1,
+    title: "Research & Define",
+    description:
+      "We start by conducting user research, analyzing competitors, and understanding your business objectives. Based on these insights, we develop user personas, user stories, and define the information architecture to create a solid foundation for user-centric design."
+  },
+  {
+    number: 2,
+    title: "Design & Prototype",
+    description:
+      "Our team crafts wireframes, visual designs, and interactive prototypes, balancing aesthetics and usability. We involve you in the process, iterating on the designs based on your feedback to ensure alignment with your vision and expectations."
+  },
+  {
+    number: 3,
+    title: "Test & Refine",
+    description:
+      "Usability testing with real users helps us identify potential issues and areas for improvement. We gather valuable feedback and use it to refine and optimize the design, ensuring a seamless and satisfying user experience."
+  },
+  {
+    number: 4,
+    title: "Implement & Evaluate",
+    description:
+      "We collaborate with your development team for a smooth design handoff and integration into the final product. Post-launch, we monitor user feedback and metrics to identify opportunities for further optimization and enhancement, keeping your digital product relevant and effective."
+  }
+];
+
 const serviceData: Record<string, any> = {
   "custom-software-development": {
     title: "Custom Software Development",
@@ -311,8 +441,21 @@ export default function ServicePage({ params }: { params: { slug: string } }) {
         />
       )}
       <ServiceCapabilities items={service.capabilities} />
-      <OurProcess />
-      <ServiceFAQs />
+      <OurProcess
+        steps={
+          params.slug === "mobile-app-development" ||
+          params.slug === "android-ios-app-development"
+            ? mobileAppProcessSteps
+            : params.slug === "software-testing"
+            ? softwareTestingProcessSteps
+            : params.slug === "devops-cloud-services"
+            ? devopsProcessSteps
+            : params.slug === "ui-ux-designing"
+            ? uiUxProcessSteps
+            : undefined
+        }
+      />
+      <ServiceFAQs slug={params.slug} />
       <Footer />
     </main>
   );

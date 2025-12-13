@@ -3,7 +3,13 @@
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 
-const processSteps = [
+interface ProcessStep {
+  number: number;
+  title: string;
+  description: string;
+}
+
+const defaultProcessSteps: ProcessStep[] = [
   {
     number: 1,
     title: "Planning",
@@ -48,7 +54,13 @@ const processSteps = [
   }
 ];
 
-export default function OurProcess() {
+interface OurProcessProps {
+  steps?: ProcessStep[];
+}
+
+export default function OurProcess(props: OurProcessProps = {}) {
+  const { steps } = props;
+  const processSteps = steps ?? defaultProcessSteps;
   const [selectedStep, setSelectedStep] = useState<number>(1);
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef<HTMLDivElement>(null);
