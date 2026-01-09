@@ -7,15 +7,15 @@ import logo from "../../../assets/portfolio/ftf/darkLogo.png";
 import logoLight from "../../../assets/portfolio/ftf/lightLogo.png";
 import backgroundImage from "../../../assets/portfolio/ftf/back.png";
 import backgroundImageLight from "../../../assets/portfolio/ftf/backLight.png";
-import img1 from "../../../assets/portfolio/ftf/1.PNG";
-import img2 from "../../../assets/portfolio/ftf/2.PNG";
-import img3 from "../../../assets/portfolio/ftf/3.PNG";
-import img4 from "../../../assets/portfolio/ftf/4.PNG";
-import img5 from "../../../assets/portfolio/ftf/5.PNG";
-import img1Light from "../../../assets/portfolio/ftf/1-Light.PNG";
-import img2Light from "../../../assets/portfolio/ftf/2-Light.PNG";
+import img1 from "../../../assets/portfolio/ftf/1.png";
+import img2 from "../../../assets/portfolio/ftf/2.png";
+import img3 from "../../../assets/portfolio/ftf/3.png";
+import img4 from "../../../assets/portfolio/ftf/4.png";
+import img5 from "../../../assets/portfolio/ftf/5.png";
+import img1Light from "../../../assets/portfolio/ftf/1-Light.png";
+import img2Light from "../../../assets/portfolio/ftf/2-Light.png";
 import img3Light from "../../../assets/portfolio/ftf/3-Light.png";
-import img4Light from "../../../assets/portfolio/ftf/4-Light.PNG";
+import img4Light from "../../../assets/portfolio/ftf/4-Light.png";
 import img5Light from "../../../assets/portfolio/ftf/5-Light.png";
 
 export default function FTFPortfolio() {
@@ -143,28 +143,28 @@ export default function FTFPortfolio() {
     const section4VideoLight = "/assets/portfolio/ftf/section4-Light.mp4";
     const section5Video = "/assets/portfolio/ftf/section5.mp4";
     const section5VideoLight = "/assets/portfolio/ftf/section5-Light.mp4";
-    const section6Video = "/assets/portfolio/ftf/section6.MP4";
-    const section6VideoLight = "/assets/portfolio/ftf/section6-Light.MP4";
-    const section7Video = "/assets/portfolio/ftf/section7.MP4";
-    const section7VideoLight = "/assets/portfolio/ftf/section7-Light.MP4";
-    const section8Video = "/assets/portfolio/ftf/section8.MP4";
+    const section6Video = "/assets/portfolio/ftf/section6.mp4";
+    const section6VideoLight = "/assets/portfolio/ftf/section6-Light.mp4";
+    const section7Video = "/assets/portfolio/ftf/section7.mp4";
+    const section7VideoLight = "/assets/portfolio/ftf/section7-Light.mp4";
+    const section8Video = "/assets/portfolio/ftf/section8.mp4";
     const section8VideoLight = "/assets/portfolio/ftf/section8-Light.mp4";
     const section9Video = "/assets/portfolio/ftf/section9.mp4";
     const section9VideoLight = "/assets/portfolio/ftf/section9-Light.mp4";
-    const section10Video = "/assets/portfolio/ftf/section10.MP4";
-    const section10VideoLight = "/assets/portfolio/ftf/section10-Light.MP4";
+    const section10Video = "/assets/portfolio/ftf/section10.mp4";
+    const section10VideoLight = "/assets/portfolio/ftf/section10-Light.mp4";
     const staffSection3Video = "/assets/portfolio/ftf/staffSection-3.mp4";
-    const staffSection3VideoLight = "/assets/portfolio/ftf/staffSectionLight-3.MP4";
+    const staffSection3VideoLight = "/assets/portfolio/ftf/staffSectionLight-3.mp4";
     const staffSection4Video = "/assets/portfolio/ftf/staffSection-4.mp4";
-    const staffSection4VideoLight = "/assets/portfolio/ftf/staffSectionLight-4.MP4";
+    const staffSection4VideoLight = "/assets/portfolio/ftf/staffSectionLight-4.mp4";
     const staffSection5Video = "/assets/portfolio/ftf/staffSection-5.mp4";
-    const staffSection5VideoLight = "/assets/portfolio/ftf/staffSectionLight-5.MP4";
+    const staffSection5VideoLight = "/assets/portfolio/ftf/staffSectionLight-5.mp4";
     const staffSection6Video = "/assets/portfolio/ftf/staffSection-6.mp4";
-    const staffSection6VideoLight = "/assets/portfolio/ftf/staffSectionLight-6.MP4";
+    const staffSection6VideoLight = "/assets/portfolio/ftf/staffSectionLight-6.mp4";
     const staffSection7Video = "/assets/portfolio/ftf/staffSection-7.mp4";
-    const staffSection7VideoLight = "/assets/portfolio/ftf/staffSectionLight-7.MP4";
+    const staffSection7VideoLight = "/assets/portfolio/ftf/staffSectionLight-7.mp4";
     const staffSection8Video = "/assets/portfolio/ftf/staffSection-8.mp4";
-    const staffSection8VideoLight = "/assets/portfolio/ftf/staffSectionLight-8.MP4";
+    const staffSection8VideoLight = "/assets/portfolio/ftf/staffSectionLight-8.mp4";
 
     // Ensure video plays when component mounts or theme changes
     if (videoRef.current) {
@@ -287,9 +287,8 @@ export default function FTFPortfolio() {
       <div
         className={`app ${isLightMode ? "light-mode" : ""}`}
         style={{
-          backgroundImage: `url(${
-            isLightMode ? backgroundImageLight.src : backgroundImage.src
-          })`
+          backgroundImage: `url(${isLightMode ? backgroundImageLight.src : backgroundImage.src
+            })`
         }}
       >
         {/* Theme Toggle Button */}
