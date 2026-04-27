@@ -109,7 +109,7 @@ export default function MissionVision() {
                 Our Vision
               </h2>
               <p className="text-base md:text-lg text-gray-300 leading-relaxed">
-                Our vision is to strengthen our position as a globally trusted technology partner, recognized for delivering innovation at scale and leading the adoption of artificial intelligence across industries. We aim to shape the future of digital transformation by combining AI-driven intelligence with engineering excellence—setting new benchmarks for quality, reliability, and long-term impact.
+                Our vision is to strengthen our position as a globally trusted technology partner, recognized for delivering innovation at scale and leading the adoption of artificial intelligence across industries. We aim to shape the future of digital transformation by combining intelligence with engineering excellence setting new benchmarks for quality, reliability, and long-term impact.
               </p>
             </div>
 

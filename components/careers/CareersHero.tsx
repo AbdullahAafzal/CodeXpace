@@ -67,7 +67,7 @@ export default function CareersHero() {
           className={`text-base md:text-lg text-gray-300 mb-10 max-w-3xl mx-auto leading-relaxed transition-all duration-1000 delay-200 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
             }`}
         >
-          Build the future of technology with us. Explore exciting career opportunities at CodeXpace.
+          Shape the future of technology with us. At CodeXpace, we’re building innovative solutions and looking for passionate individuals ready to grow, create, and make an impact. Explore exciting career opportunities and be part of something extraordinary.
         </p>
       </div>
     </section>
