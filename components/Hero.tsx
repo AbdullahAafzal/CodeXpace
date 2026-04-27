@@ -54,7 +54,7 @@ export default function Hero() {
           className="absolute inset-0 w-full h-full object-cover"
           style={{ zIndex: 0, opacity: 0.9 }}
         >
-          <source src="./video.mp4" type="video/mp4" />
+          <source src="./codexpace-video.mp4" type="video/mp4" />
         </video>
 
         <div className="dark"

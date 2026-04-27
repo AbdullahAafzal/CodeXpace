@@ -6,8 +6,8 @@ const slides = [
   { title: "Abdullah", text: "Chief Systems Architect", image: "Abdulllah.jpeg" },
   { title: "Ali Reyan", text: "Chief Technology Officer", image: "ali-rehan.jpeg" },
   { title: "Ans Mustafa", text: "Senior Backend Developer", image: "ans.png" },
-  { title: "Asad Ali", text: "Chief Sales Officer", image: "Asad-ali.jpeg" },
-  { title: "Talha Zahid", text: "Chief Operational Officer", image: "talha.jpeg" }
+  { title: "Asad Ali", text: "Chief Sales Officer and Co-founder", image: "Asad-ali.jpeg" },
+  { title: "Talha Zahid", text: "Chief Operational Officer and Co-founder", image: "talha-zahid.jpeg" }
 ];
 
 function GlobalLeadership() {
