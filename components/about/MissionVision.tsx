@@ -64,7 +64,7 @@ export default function MissionVision() {
             >
               <div className="relative rounded-xl overflow-hidden aspect-[4/3]">
                 <Image
-                  src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop"
+                  src="/mission.jpeg"
                   alt="Mission"
                   fill
                   className="object-cover"
@@ -84,10 +84,7 @@ export default function MissionVision() {
               </h2>
               <div className="space-y-4 text-gray-300 leading-relaxed">
                 <p className="text-base md:text-lg">
-                  Our mission is to simplify technology and make it accessible, reliable, and growth-driven for businesses of all sizes. We believe that every company, regardless of its size or industry, deserves access to world-class software solutions.
-                </p>
-                <p className="text-base md:text-lg">
-                  We partner with our clients to transform their visions into impactful digital products that solve real-world problems, enhance user experiences, and drive measurable business results.
+                  Our mission is to deliver enterprise-grade technology solutions that empower organizations to operate with greater agility, efficiency, and strategic clarity. With deep expertise in artificial intelligence and advanced engineering, we build scalable, secure, and high-performance systems that solve complex business challenges, unlock data-driven insights, and drive sustained competitive advantage.
                 </p>
               </div>
             </div>
@@ -112,7 +109,7 @@ export default function MissionVision() {
                 Our Vision
               </h2>
               <p className="text-base md:text-lg text-gray-300 leading-relaxed">
-                To be a trusted global partner for businesses seeking innovation through custom software, artificial intelligence, and emerging technologies. We envision a future where technology seamlessly integrates with business operations, enabling companies to achieve unprecedented growth and success.
+                Our vision is to strengthen our position as a globally trusted technology partner, recognized for delivering innovation at scale and leading the adoption of artificial intelligence across industries. We aim to shape the future of digital transformation by combining AI-driven intelligence with engineering excellence—setting new benchmarks for quality, reliability, and long-term impact.
               </p>
             </div>
 
@@ -123,7 +120,7 @@ export default function MissionVision() {
             >
               <div className="relative rounded-xl overflow-hidden aspect-[4/3]">
                 <Image
-                  src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=800&h=600&fit=crop"
+                  src="/vision-codexpace.jpeg"
                   alt="Vision"
                   fill
                   className="object-cover"

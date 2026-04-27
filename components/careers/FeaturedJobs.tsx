@@ -94,7 +94,7 @@ export default function FeaturedJobs() {
   return (
     <section className="py-20 bg-black relative">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
+        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-12">
           <span className="text-white">Featured</span>{" "}
           <span className="bg-gradient-to-r from-red-500 via-red-400 to-red-500 bg-clip-text text-transparent">
             Jobs
@@ -106,11 +106,10 @@ export default function FeaturedJobs() {
             <div
               key={job.id}
               ref={(el: any) => (cardRefs.current[index] = el)}
-              className={`bg-black/60 backdrop-blur-xl border border-red-500/30 rounded-xl p-6 transition-all duration-700 hover:border-red-500/70 hover:-translate-y-1 ${
-                visibleCards.has(index)
+              className={`bg-black/60 backdrop-blur-xl border border-red-500/30 rounded-xl p-6 transition-all duration-700 hover:border-red-500/70 hover:-translate-y-1 ${visibleCards.has(index)
                   ? "opacity-100 translate-y-0"
                   : "opacity-0 translate-y-8"
-              }`}
+                }`}
               style={{
                 transitionDelay: `${index * 0.1}s`,
                 boxShadow:
