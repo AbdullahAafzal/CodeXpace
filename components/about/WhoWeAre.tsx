@@ -29,8 +29,8 @@ export default function WhoWeAre() {
   }, []);
 
   return (
-    <section className="py-20 bg-black relative">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
+    <section className="py-20 pt-0 max-[768px]:py-0 bg-black relative">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div
           ref={ref}
           className="bg-black/60 backdrop-blur-xl border border-red-500/30 rounded-2xl p-8 md:p-12"
@@ -41,31 +41,30 @@ export default function WhoWeAre() {
           <div className="grid md:grid-cols-2 gap-12 items-center">
             {/* Left Side - Text */}
             <div
-              className={`transition-all duration-700 ${
-                isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-8'
-              }`}
+              className={`relative transition-all duration-700 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-8'
+                }`}
             >
+              <div className="absolute inset-0">
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[500px] md:w-[700px] h-[250px] md:h-[250px] bg-red-700/20 blur-[140px]" />
+              </div>
               <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
                 Who We Are
               </h2>
               <div className="space-y-4 text-gray-300 leading-relaxed">
-                <p className="text-base md:text-lg">
-                  CodeXpace is a leading software development company dedicated to transforming ideas into powerful digital solutions. We specialize in creating custom software that drives innovation and business growth.
+                <p className="text-base md:text-lg max-[580px]:text-[15px]">
+                  CodeXpace is a globally trusted software development company focused on transforming ideas into scalable, high-impact digital solutions. We partner with organizations worldwide to build products that solve complex problems and deliver measurable business growth.
+                  Our expertise spans full-stack development, mobile applications, artificial intelligence (AI), blockchain, DevOps, and quality assurance. With a strong focus on AI-driven systems, we help businesses unlock automation, data intelligence, and smarter decision-making to accelerate innovation.
                 </p>
-                <p className="text-base md:text-lg">
-                  Our expertise spans across frontend and backend development, mobile applications, artificial intelligence, blockchain technology, DevOps, and quality assurance. We bring together a team of skilled engineers, creative designers, and strategic thinkers who are passionate about delivering excellence.
-                </p>
-                <p className="text-base md:text-lg">
-                  With years of experience and a client-centric approach, we've helped numerous businesses scale their operations, streamline processes, and achieve their digital transformation goals.
+                <p className="text-base md:text-lg max-[580px]:text-[15px]">
+                  Backed by a team of experienced engineers and designers, we deliver robust, scalable solutions aligned with business goals and built for long-term value.
                 </p>
               </div>
             </div>
 
             {/* Right Side - Image */}
             <div
-              className={`transition-all duration-700 delay-200 ${
-                isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-8'
-              }`}
+              className={`transition-all duration-700 delay-200 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-8'
+                }`}
             >
               <div className="relative rounded-xl overflow-hidden aspect-[4/3]">
                 <Image

@@ -150,18 +150,18 @@ export default function TechStack() {
   return (
     <section className="py-20 bg-black relative">
       <div className="relative container mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-4xl md:text-5xl font-bold text-center mb-16">
+        <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-16">
           What solutions{" "}
           <span className="bg-gradient-to-r from-red-500 via-red-400 to-red-500 bg-clip-text text-transparent">
             Do you need
           </span>
-        </h2>
+        </h1>
       </div>
 
       {/* Slider Container - Full Width */}
-      <div 
+      <div
         className="relative overflow-hidden py-2"
-        style={{ 
+        style={{
           width: '100vw',
           marginLeft: 'calc(-50vw + 50%)',
           paddingLeft: '1rem',

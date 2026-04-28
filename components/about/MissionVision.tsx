@@ -47,7 +47,7 @@ export default function MissionVision() {
 
   return (
     <section className="py-20 bg-black relative">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl space-y-12">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
         {/* Mission */}
         <div
           ref={missionRef}
@@ -59,13 +59,12 @@ export default function MissionVision() {
           <div className="grid md:grid-cols-2 gap-12 items-center">
             {/* Left Side - Image */}
             <div
-              className={`transition-all duration-700 ${
-                missionVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-8'
-              }`}
+              className={`transition-all duration-700 ${missionVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-8'
+                }`}
             >
               <div className="relative rounded-xl overflow-hidden aspect-[4/3]">
                 <Image
-                  src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop"
+                  src="/mission.png"
                   alt="Mission"
                   fill
                   className="object-cover"
@@ -77,19 +76,18 @@ export default function MissionVision() {
 
             {/* Right Side - Text */}
             <div
-              className={`transition-all duration-700 delay-200 ${
-                missionVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-8'
-              }`}
+              className={`relative transition-all duration-700 delay-200 ${missionVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-8'
+                }`}
             >
+              <div className="absolute inset-0">
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[500px] md:w-[700px] h-[250px] md:h-[250px] bg-red-700/20 blur-[140px]" />
+              </div>
               <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
                 Our Mission
               </h2>
               <div className="space-y-4 text-gray-300 leading-relaxed">
                 <p className="text-base md:text-lg">
-                  Our mission is to simplify technology and make it accessible, reliable, and growth-driven for businesses of all sizes. We believe that every company, regardless of its size or industry, deserves access to world-class software solutions.
-                </p>
-                <p className="text-base md:text-lg">
-                  We partner with our clients to transform their visions into impactful digital products that solve real-world problems, enhance user experiences, and drive measurable business results.
+                  Our mission is to deliver enterprise-grade technology solutions that empower organizations to operate with greater agility, efficiency, and strategic clarity. With deep expertise in artificial intelligence and advanced engineering, we build scalable, secure, and high-performance systems that solve complex business challenges, unlock data-driven insights, and drive sustained competitive advantage.
                 </p>
               </div>
             </div>
@@ -107,27 +105,28 @@ export default function MissionVision() {
           <div className="grid md:grid-cols-2 gap-12 items-center">
             {/* Left Side - Text */}
             <div
-              className={`transition-all duration-700 ${
-                visionVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-8'
-              }`}
+              className={`relative transition-all duration-700 ${visionVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-8'
+                }`}
             >
+              <div className="absolute inset-0">
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[500px] md:w-[700px] h-[250px] md:h-[250px] bg-red-700/20 blur-[140px]" />
+              </div>
               <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
                 Our Vision
               </h2>
               <p className="text-base md:text-lg text-gray-300 leading-relaxed">
-                To be a trusted global partner for businesses seeking innovation through custom software, artificial intelligence, and emerging technologies. We envision a future where technology seamlessly integrates with business operations, enabling companies to achieve unprecedented growth and success.
+                Our vision is to strengthen our position as a globally trusted technology partner, recognized for delivering innovation at scale and leading the adoption of artificial intelligence across industries. We aim to shape the future of digital transformation by combining intelligence with engineering excellence setting new benchmarks for quality, reliability, and long-term impact.
               </p>
             </div>
 
             {/* Right Side - Image */}
             <div
-              className={`transition-all duration-700 delay-200 ${
-                visionVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-8'
-              }`}
+              className={`transition-all duration-700 delay-200 ${visionVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-8'
+                }`}
             >
               <div className="relative rounded-xl overflow-hidden aspect-[4/3]">
                 <Image
-                  src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=800&h=600&fit=crop"
+                  src="/vision.png"
                   alt="Vision"
                   fill
                   className="object-cover"

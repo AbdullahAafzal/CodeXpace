@@ -3,10 +3,10 @@ import Footer from '@/components/Footer';
 import AboutHero from '@/components/about/AboutHero';
 import WhoWeAre from '@/components/about/WhoWeAre';
 import WhatWeDo from '@/components/about/WhatWeDo';
-// import MissionVision from '@/components/about/MissionVision';
-import WhyChooseUs from '@/components/about/WhyChooseUs';
+import MissionVision from '@/components/about/MissionVision';
+// import WhyChooseUs from '@/components/about/WhyChooseUs';
 // import OurValues from '@/components/about/OurValues';
-// import AwardsRecognition from '@/components/about/AwardsRecognition';
+import AwardsRecognition from '@/components/about/AwardsRecognition';
 // import OurJourney from '@/components/about/OurJourney';
 import CTASection from '@/components/about/CTASection';
 
@@ -17,10 +17,10 @@ export default function AboutPage() {
       <AboutHero />
       <WhoWeAre />
       <WhatWeDo />
-      {/* <MissionVision /> */}
-      <WhyChooseUs />
+      <MissionVision />
+      {/* <WhyChooseUs /> */}
       {/* <OurValues /> */}
-      {/* <AwardsRecognition /> */}
+      <AwardsRecognition />
       {/* <OurJourney /> */}
       <CTASection />
       <Footer />
