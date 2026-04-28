@@ -64,7 +64,7 @@ export default function MissionVision() {
             >
               <div className="relative rounded-xl overflow-hidden aspect-[4/3]">
                 <Image
-                  src="/mission.jpeg"
+                  src="/mission.png"
                   alt="Mission"
                   fill
                   className="object-cover"
@@ -120,7 +120,7 @@ export default function MissionVision() {
             >
               <div className="relative rounded-xl overflow-hidden aspect-[4/3]">
                 <Image
-                  src="/vision-codexpace.jpeg"
+                  src="/vision.png"
                   alt="Vision"
                   fill
                   className="object-cover"
