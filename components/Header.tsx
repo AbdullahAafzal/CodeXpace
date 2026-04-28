@@ -95,7 +95,7 @@ export default function Header() {
 
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2">
-            <Image src={new1} alt="CodeXpace Logo" height={60} className="object-contain" />
+            <Image src={new1} alt="CodeXpace Logo" height={80} width={170} className="object-contain" />
           </Link>
 
           {/* Desktop Menu */}
@@ -111,8 +111,8 @@ export default function Header() {
             <Link
               href="/about"
               className={`font-semibold text-sm transition-colors ${isActive("/about")
-                  ? "text-red-400"
-                  : "text-white hover:text-red-400"
+                ? "text-red-400"
+                : "text-white hover:text-red-400"
                 }`}
             >
               About Us
@@ -126,8 +126,8 @@ export default function Header() {
             >
               <button
                 className={`font-semibold text-sm transition-colors flex items-center space-x-1 ${isServicesOpen || isActive("/services")
-                    ? "text-red-400"
-                    : "text-white hover:text-red-400"
+                  ? "text-red-400"
+                  : "text-white hover:text-red-400"
                   }`}
               >
                 <span>Services</span>
@@ -154,8 +154,8 @@ export default function Header() {
             <Link
               href="/careers"
               className={`font-semibold text-sm transition-colors ${isActive("/careers")
-                  ? "text-red-400"
-                  : "text-white hover:text-red-400"
+                ? "text-red-400"
+                : "text-white hover:text-red-400"
                 }`}
             >
               Careers

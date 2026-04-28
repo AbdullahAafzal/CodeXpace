@@ -41,9 +41,12 @@ export default function WhoWeAre() {
           <div className="grid md:grid-cols-2 gap-12 items-center">
             {/* Left Side - Text */}
             <div
-              className={`transition-all duration-700 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-8'
+              className={`relative transition-all duration-700 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-8'
                 }`}
             >
+              <div className="absolute inset-0">
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[500px] md:w-[700px] h-[250px] md:h-[250px] bg-red-700/20 blur-[140px]" />
+              </div>
               <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
                 Who We Are
               </h2>

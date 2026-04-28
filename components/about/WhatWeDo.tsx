@@ -187,16 +187,15 @@ export default function Services() {
               >
                 <div className="absolute inset-0 bg-black/50 rounded-xl"></div>
 
-                <div className="relative z-10">
+                <div className="relative z-10 h-[100%]">
                   <h3 className="text-lg font-bold text-white mb-3 leading-tight">
                     {service.title}
                   </h3>
                   <p className="text-gray-200 mb-5 leading-relaxed text-sm flex-grow">
                     {service.description}
                   </p>
-                  <div
-                    className="inline-flex items-center space-x-2 text-red-400 hover:text-red-300 transition-colors duration-300 text-xs font-medium mt-auto"
-                  >
+
+                  <div className="inline-flex items-center space-x-2 absolute bottom-0 w-full justify-center text-red-400 hover:text-red-300 transition-colors duration-300 text-md font-medium mt-auto">
                     <span>{service.cta}</span>
                     <svg
                       className="w-3.5 h-3.5"

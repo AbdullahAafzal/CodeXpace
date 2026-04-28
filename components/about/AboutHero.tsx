@@ -57,7 +57,7 @@ export default function AboutHero() {
           className={`text-3xl sm:text-4xl md:text-5xl font-bold mb-6 max-[580px]:text-[30px] leading-tight transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
             }`}
         >
-          <span className="text-white">From Concept to</span>{' '}
+          <span className="text-white">Turning Vision into</span>{' '}
           <span className="bg-gradient-to-r from-red-500 via-red-400 to-red-500 bg-clip-text text-transparent">
             Reality
           </span>
@@ -66,7 +66,7 @@ export default function AboutHero() {
           className={`text-base md:text-lg text-gray-300 mb-10 max-w-3xl mx-auto leading-relaxed max-[580px]:text-[15px] transition-all duration-1000 delay-200 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
             }`}
         >
-          CodeXpace builds custom software solutions that help companies innovate, scale, and succeed in a digital-first world.
+          At CodeXpace, we turn bold ideas into powerful digital solutions. Built to scale, designed to lead.
         </p>
       </div>
     </section>

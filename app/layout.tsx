@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   description:
     "Fast, intelligent custom software solutions, powered by AI and automation, tailored to meet your unique needs.",
   icons: {
-    icon: "/favicon.png",
+    icon: "/favicon.jpeg",
   },
 };
 

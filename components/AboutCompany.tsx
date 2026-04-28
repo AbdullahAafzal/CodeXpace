@@ -78,7 +78,10 @@ export default function AboutCompany() {
         <div className="grid grid-cols-1 lg:grid-cols-[0.8fr_1.2fr] gap-10 lg:gap-14 items-center">
 
           {/* Benefits */}
-          <div className="space-y-4">
+          <div className="space-y-4 relative">
+            <div className="absolute inset-0">
+              <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[500px] md:w-[700px] h-[250px] md:h-[250px] bg-red-700/20 blur-[140px]" />
+            </div>
             {benefits.map((benefit, index) => (
               <div key={index} className="flex items-start gap-3">
                 <div className="w-2 h-2 bg-red-500 rounded-full mt-2 shrink-0"></div>
