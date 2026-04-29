@@ -67,14 +67,10 @@ export default function WhoWeAre() {
                 }`}
             >
               <div className="relative rounded-xl overflow-hidden aspect-[4/3]">
-                <Image
-                  src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&h=600&fit=crop"
-                  alt="Team working on code"
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 768px) 100vw, 50vw"
+                <video
+                  src="/video.mp4" autoPlay loop muted playsInline className="absolute inset-0 w-full h-full object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                {/* <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div> */}
               </div>
             </div>
           </div>

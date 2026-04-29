@@ -233,7 +233,7 @@ export default function OurProcess(props: OurProcessProps = {}) {
             }`}
         >
           <Link
-            href="/contact"
+            href="/#contact-form"
             className="inline-flex items-center justify-center bg-gradient-to-r from-red-600 to-red-500 hover:from-red-500 hover:to-red-400 text-white px-8 py-4 rounded-lg font-semibold text-base md:text-lg transition-all shadow-lg shadow-red-500/20 hover:shadow-xl hover:shadow-red-500/30 hover:scale-105 transform uppercase tracking-wide"
           >
             Let&apos;s Talk About Project
