@@ -6,14 +6,14 @@ import Link from "next/link";
 import { AnimatePresence, motion } from "framer-motion";
 
 import codaImage from "../assets/projects/Coda.png";
-import HT from "../assets/projects/HT.png";
+import HT from "../assets/projects/3.png";
 import Liberty from "../assets/projects/Liberty.png";
 import Luminary from "../assets/projects/Luminary.png";
 import telegraphyImage from "../assets/projects/Palplug.png";
 import Dillion from "../assets/projects/Dillion.png";
 import coder from "../assets/projects/coder.png";
-import yunakImage from "../assets/projects/Yunak.png";
-import ftfImage from "../assets/projects/Ftf.png";
+import yunakImage from "../assets/projects/1.png";
+import ftfImage from "../assets/projects/2.png";
 
 const projects = [
   {

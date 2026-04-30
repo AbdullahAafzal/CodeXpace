@@ -15,23 +15,23 @@ const getServiceImage = (slug?: string): string | null => {
   if (!slug) return null;
 
   const imageMap: Record<string, string> = {
-    "ai-machine-learning-development": "/assets/Services/Fiction.png",
+    "ai-machine-learning-development": "/assets/Services/Ai-machine.mp4",
     "custom-software-development":
-      "/assets/Services/CustomSoftwareDevelopment.png",
-    "devops-cloud-services": "/assets/Services/Devsops.png",
-    "mvp-development": "/assets/Services/MVP.png",
-    "saas-development": "/assets/Services/Saas.png",
-    "web-development": "/assets/Services/Web.png",
-    "front-backend-development": "/assets/Services/Web.png",
-    "software-testing": "/assets/Services/Software.png",
-    "enterprise-software-development": "/assets/Services/Software.png",
-    "mobile-app-development": "/assets/Services/App.png",
-    "android-ios-app-development": "/assets/Services/App.png",
-    "it-consultation": "/assets/Services/IT.png",
-    "ui-ux-designing": "/assets/Services/uiux.png",
-    "graphic-designing": "/assets/Services/Graphics.png",
-    "blockchain-development": "/assets/Services/blockchain.png",
-    "enterprise-mobility-solutions": "/assets/Services/enterprise.png"
+      "/assets/Services/custom-software-development.mp4",
+    "devops-cloud-services": "/assets/Services/Devops.mp4",
+    "mvp-development": "/assets/Services/MVP.mp4",
+    "saas-development": "/assets/Services/Saas.mp4",
+    "web-development": "/assets/Services/web.mp4",
+    "front-backend-development": "/assets/Services/web.mp4",
+    "software-testing": "/assets/Services/software.mp4",
+    "enterprise-software-development": "/assets/Services/software.mp4",
+    "mobile-app-development": "/assets/Services/mobile-app.mp4",
+    "android-ios-app-development": "/assets/Services/mobile-app.mp4",
+    "it-consultation": "/assets/Services/IT.mp4",
+    "ui-ux-designing": "/assets/Services/UI-UX.mp4",
+    "graphic-designing": "/assets/Services/Graphic-design.mp4",
+    "blockchain-development": "/assets/Services/Blockchain.mp4",
+    "enterprise-mobility-solutions": "/assets/Services/Enterprise.mp4"
   };
 
   return imageMap[slug] || null;
@@ -42,7 +42,7 @@ export default function ServiceHero({
   subtitle,
   slug
 }: ServiceHeroProps) {
-  const backgroundImage = getServiceImage(slug);
+  const backgroundVideo = getServiceImage(slug);
   const [isVisible, setIsVisible] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
   const pathname = usePathname();
@@ -90,19 +90,21 @@ export default function ServiceHero({
     <section className="relative h-[93vh] max-[768px]:h-[80vh] flex items-center justify-center overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0 bg-black">
-        {/* Background image */}
-        {backgroundImage && (
-          <div className="absolute inset-0">
-            <div
-              className="w-full h-full"
-              style={{
-                backgroundImage: `url(${backgroundImage})`,
-                backgroundSize: "cover",
-                backgroundPosition: "center"
-              }}
-            ></div>
-          </div>
-        )}
+        {/* Background video */}
+        {backgroundVideo && (
+  <div className="absolute inset-0 overflow-hidden">
+    <video
+      className="w-full h-full object-cover"
+      autoPlay
+      muted
+      loop
+      playsInline
+      preload="auto"
+    >
+      <source src={backgroundVideo} type="video/mp4" />
+    </video>
+  </div>
+)}
         <div
           className="absolute inset-0"
           style={{
