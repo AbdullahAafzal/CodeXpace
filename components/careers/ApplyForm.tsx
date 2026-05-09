@@ -1,9 +1,10 @@
 'use client';
 
 import { useState, useRef } from 'react';
+import { API_ENDPOINTS } from '@/lib/api';
 
 interface ApplyFormProps {
-  jobTitle: string;
+  jobTitle: string; // This will be the job ID
 }
 
 export default function ApplyForm({ jobTitle }: ApplyFormProps) {
@@ -21,10 +22,14 @@ export default function ApplyForm({ jobTitle }: ApplyFormProps) {
   const [resumeFileName, setResumeFileName] = useState('');
   const fileInputRef = useRef<HTMLInputElement>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [status, setStatus] = useState<{
+    type: 'idle' | 'success' | 'error';
+    message?: string;
+  }>({ type: 'idle' });
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
-    setFormData(prev => ({
+    setFormData((prev: typeof formData) => ({
       ...prev,
       [name]: value
     }));
@@ -40,17 +45,39 @@ export default function ApplyForm({ jobTitle }: ApplyFormProps) {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (!resume) {
+      setStatus({ type: 'error', message: 'Please upload your resume.' });
+      return;
+    }
+
     setIsSubmitting(true);
+    setStatus({ type: 'idle' });
     
-    // Here you would normally submit to the API
-    // For now, we'll just log the data
-    console.log('Form Data:', formData);
-    console.log('Resume:', resume);
-    
-    // Simulate API call
-    setTimeout(() => {
-      setIsSubmitting(false);
-      alert('Application submitted successfully! (This is a UI demo - API integration pending)');
+    try {
+      const submitData = new FormData();
+      Object.entries(formData).forEach(([key, value]) => {
+        if (value !== null && value !== undefined) {
+          submitData.append(key, value as string | Blob);
+        }
+      });
+      submitData.append('resume', resume);
+
+      const response = await fetch(API_ENDPOINTS.JOB_APPLICATION, {
+        method: 'POST',
+        body: submitData,
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.message || 'Failed to submit application');
+      }
+
+      setStatus({ 
+        type: 'success', 
+        message: 'Your application has been submitted successfully! We will contact you soon.' 
+      });
+      
       // Reset form
       setFormData({
         name: '',
@@ -67,7 +94,15 @@ export default function ApplyForm({ jobTitle }: ApplyFormProps) {
       if (fileInputRef.current) {
         fileInputRef.current.value = '';
       }
-    }, 1000);
+    } catch (error) {
+      console.error('Error submitting application:', error);
+      setStatus({ 
+        type: 'error', 
+        message: error instanceof Error ? error.message : 'Something went wrong. Please try again later.' 
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleFileClick = () => {
@@ -255,6 +290,15 @@ export default function ApplyForm({ jobTitle }: ApplyFormProps) {
             </p>
           )}
         </div>
+
+        {/* Status Messages */}
+        {status.message && (
+          <div className={`mt-6 p-4 rounded-lg text-sm ${
+            status.type === 'success' ? 'bg-green-500/20 text-green-400 border border-green-500/30' : 'bg-red-500/20 text-red-400 border border-red-500/30'
+          }`}>
+            {status.message}
+          </div>
+        )}
 
         {/* Submit Button */}
         <div className="pt-4">
