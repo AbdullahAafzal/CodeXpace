@@ -8,11 +8,29 @@ export async function GET(request: NextRequest) {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
+        'Accept': 'application/json',
+        'User-Agent': 'Mozilla/5.0 (Vercel Proxy)',
       },
-      cache: 'no-store', // Don't cache job postings
+      cache: 'no-store',
     });
 
-    const data = await response.json();
+    const contentType = response.headers.get('content-type');
+    let data;
+    
+    if (contentType && contentType.includes('application/json')) {
+      data = await response.json();
+    } else {
+      const text = await response.text();
+      console.error(`Backend returned non-JSON response (${response.status}):`, text.substring(0, 200));
+      return NextResponse.json(
+        { 
+          status: 'error', 
+          message: `Backend returned ${response.status}`, 
+          debug: 'Response was not JSON. Check backend logs.' 
+        },
+        { status: response.status }
+      );
+    }
 
     if (!response.ok) {
       console.error(`Backend error (${response.status}):`, data);
