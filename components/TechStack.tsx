@@ -51,7 +51,7 @@ const getIcon = (tech: string) => {
   const iconMap: Record<string, any> = {
     django: djangoIcon,
     react: reactIcon,
-    nextjs: nodeIcon, // Using node icon as fallback for nextjs (icon not available)
+    nextjs: nodeIcon, // Using node icon as fallback for nextjs haseeb (icon not available)
     node: nodeIcon,
     python: pythonIcon,
     docker: dockerIcon,
