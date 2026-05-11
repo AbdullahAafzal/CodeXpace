@@ -16,17 +16,22 @@ export async function POST(request: NextRequest) {
     const data = await response.json();
 
     if (!response.ok) {
+      console.error(`Backend error (${response.status}):`, data);
       return NextResponse.json(
-        { status: 'error', message: data.message || 'Failed to submit application' },
+        { status: 'error', message: data.message || 'Failed to submit application', details: data },
         { status: response.status }
       );
     }
 
     return NextResponse.json(data, { status: response.status });
   } catch (error) {
-    console.error('Error proxying application:', error);
+    console.error('Proxy error (Apply):', error);
     return NextResponse.json(
-      { status: 'error', message: 'An error occurred while submitting application' },
+      { 
+        status: 'error', 
+        message: 'An error occurred while proxying the application',
+        debug: error instanceof Error ? error.message : 'Unknown error'
+      },
       { status: 500 }
     );
   }

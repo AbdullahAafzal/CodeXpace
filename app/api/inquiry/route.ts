@@ -17,17 +17,22 @@ export async function POST(request: NextRequest) {
     const data = await response.json();
 
     if (!response.ok) {
+      console.error(`Backend error (${response.status}):`, data);
       return NextResponse.json(
-        { status: 'error', message: data.message || 'Failed to submit inquiry' },
+        { status: 'error', message: data.message || 'Failed to submit inquiry', details: data },
         { status: response.status }
       );
     }
 
     return NextResponse.json(data, { status: response.status });
   } catch (error) {
-    console.error('Error proxying inquiry:', error);
+    console.error('Proxy error (Inquiry):', error);
     return NextResponse.json(
-      { status: 'error', message: 'An error occurred while submitting inquiry' },
+      { 
+        status: 'error', 
+        message: 'An error occurred while proxying the inquiry',
+        debug: error instanceof Error ? error.message : 'Unknown error'
+      },
       { status: 500 }
     );
   }

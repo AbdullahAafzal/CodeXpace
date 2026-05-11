@@ -15,17 +15,25 @@ export async function GET(request: NextRequest) {
     const data = await response.json();
 
     if (!response.ok) {
+      console.error(`Backend error (${response.status}):`, data);
       return NextResponse.json(
-        { status: 'error', message: 'Failed to fetch jobs' },
+        { status: 'error', message: `Backend returned ${response.status}`, details: data },
         { status: response.status }
       );
     }
 
     return NextResponse.json(data, { status: response.status });
   } catch (error) {
-    console.error('Error proxying jobs:', error);
+    console.error('Proxy error details:', {
+      url: `${BACKEND_URL}/api/applications/postings/`,
+      error: error instanceof Error ? error.message : error
+    });
     return NextResponse.json(
-      { status: 'error', message: 'An error occurred while fetching jobs' },
+      { 
+        status: 'error', 
+        message: 'An error occurred while proxying the request',
+        debug: error instanceof Error ? error.message : 'Unknown error'
+      },
       { status: 500 }
     );
   }
