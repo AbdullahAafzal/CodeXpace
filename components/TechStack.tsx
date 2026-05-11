@@ -64,7 +64,7 @@ const getIcon = (tech: string) => {
     aws: awsIcon,
     azure: azureIcon,
     gcp: gcpIcon,
-    express: javascriptIcon, // Using javascript icon as fallback for express (icon not available)
+    express: javascriptIcon, // Using javascript icon as fallback for express codexpace (icon not available)
     mongodb: mongodbIcon,
     postgresql: postgresqlIcon,
     mysql: mysqlIcon,
