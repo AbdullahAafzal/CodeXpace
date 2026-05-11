@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 
-const BACKEND_URL = process.env.BACKEND_API_URL || 'https://api.codexpace.com';
+const BACKEND_URL = process.env.BACKEND_API_URL || 'https://careers.codexpace.com';
 
 export async function GET(request: NextRequest) {
   try {
