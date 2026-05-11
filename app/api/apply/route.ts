@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 
-const BACKEND_URL = process.env.BACKEND_API_URL || 'https://careers.codexpace.com';
+const BACKEND_URL = (process.env.BACKEND_API_URL || 'https://careers.codexpace.com').replace(/\/$/, '');
 
 export async function POST(request: NextRequest) {
   try {
