@@ -31,6 +31,27 @@ const projects = [
     image: ftfImage
   },
   {
+    id: "ht",
+    name: "Hammers & Tounges",
+    description:
+      "Hammers & Tongues Auction is a digital auction platform enabling users to bid, buy, and sell products in real time with secure transactions and transparent pricing. We built a system featuring live bidding, smart inventory management, and instant notifications to enhance user engagement. With seamless mobile access and scalable architecture, the platform delivers a fast, secure, and modern auction experience.",
+    image: HT
+  },
+  {
+    id: "quantummind",
+    name: "Quantum Mind",
+    description:
+      "Quantum Mind is a modern personal development platform that empowers users to enhance their mindset, boost productivity, and achieve their goals through interactive learning, progress tracking, and personalized growth experiences. Designed for accessibility and engagement, it helps users build positive habits and unlock their true potential.",
+    image: Liberty
+  },
+  {
+    id: "loyalific",
+    name: "Loyalific",
+    description:
+      "Build digital loyalty cards that keep customers coming back. Reward repeat visits, gain valuable customer insights, and send targeted updates and offers directly to your customer's mobile wallets. All without requiring them to download an app.",
+    image: HT
+  },
+  {
     id: "liberty",
     name: "Liberty91",
     description:
@@ -57,13 +78,6 @@ const projects = [
     description:
       "Spectra Solar delivers clean, renewable solar energy solutions for businesses and homes. We design and deploy scalable solar installations, integrate smart energy management systems, and monitor performance to maximize energy savings. The result is reliable solar power, reduced carbon footprint, and long-term sustainability.",
     image: codaImage
-  },
-  {
-    id: "ht",
-    name: "Hammers & Tounges",
-    description:
-      "Hammers & Tongues Auction is a digital auction platform enabling users to bid, buy, and sell products in real time with secure transactions and transparent pricing. We built a system featuring live bidding, smart inventory management, and instant notifications to enhance user engagement. With seamless mobile access and scalable architecture, the platform delivers a fast, secure, and modern auction experience.",
-    image: HT
   },
   {
     id: "palplug",

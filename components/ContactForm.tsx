@@ -1,12 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
-import client1 from "../assets/Clients/1.jpeg";
-import client2 from "../assets/Clients/2.jpeg";
-import client3 from "../assets/Clients/3.jpeg";
-import client4 from "../assets/Clients/4.jpeg";
-import client5 from "../assets/Clients/5.jpeg";
+import { API_ENDPOINTS } from "@/lib/api";
 
 const benefits = [
   'Proven Track Record of Delivering Results',
@@ -23,11 +18,49 @@ export default function ContactForm() {
     phone: "",
     message: ""
   });
+  const [status, setStatus] = useState<{
+    type: 'idle' | 'loading' | 'success' | 'error';
+    message?: string;
+  }>({ type: 'idle' });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission
-    console.log("Form submitted:", formData);
+    setStatus({ type: 'loading' });
+
+    try {
+      const response = await fetch(API_ENDPOINTS.INQUIRY, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.message || 'Failed to submit inquiry');
+      }
+
+      setStatus({ 
+        type: 'success', 
+        message: 'Thank you! Your inquiry has been submitted successfully.' 
+      });
+      
+      // Reset form
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        message: ""
+      });
+    } catch (error) {
+      console.error('Error submitting inquiry:', error);
+      setStatus({ 
+        type: 'error', 
+        message: error instanceof Error ? error.message : 'Something went wrong. Please try again later.' 
+      });
+    }
   };
 
   const handleChange = (
@@ -144,23 +177,34 @@ export default function ContactForm() {
                 </div>
                 <button
                   type="submit"
-                  className="w-fit bg-gradient-to-r from-red-600 to-red-500 text-white px-6 py-2.5 rounded-lg font-semibold text-sm shadow-lg shadow-red-500/20 flex items-center justify-center space-x-2"
+                  disabled={status.type === 'loading'}
+                  className="w-fit bg-gradient-to-r from-red-600 to-red-500 text-white px-6 py-2.5 rounded-lg font-semibold text-sm shadow-lg shadow-red-500/20 flex items-center justify-center space-x-2 disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                  <span>SUBMIT HERE</span>
-                  <svg
-                    className="w-4 h-4"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M13 7l5 5m0 0l-5 5m5-5H6"
-                    />
-                  </svg>
+                  <span>{status.type === 'loading' ? 'SUBMITTING...' : 'SUBMIT HERE'}</span>
+                  {status.type !== 'loading' && (
+                    <svg
+                      className="w-4 h-4"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M13 7l5 5m0 0l-5 5m5-5H6"
+                      />
+                    </svg>
+                  )}
                 </button>
+
+                {status.message && (
+                  <div className={`mt-4 p-3 rounded-lg text-sm ${
+                    status.type === 'success' ? 'bg-green-500/20 text-green-400 border border-green-500/30' : 'bg-red-500/20 text-red-400 border border-red-500/30'
+                  }`}>
+                    {status.message}
+                  </div>
+                )}
               </form>
             </div>
           </div>

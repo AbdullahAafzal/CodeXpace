@@ -51,7 +51,7 @@ const getIcon = (tech: string) => {
   const iconMap: Record<string, any> = {
     django: djangoIcon,
     react: reactIcon,
-    nextjs: nodeIcon, // Using node icon as fallback for nextjs (icon not available)
+    nextjs: nodeIcon, // Using node icon as fallback for nextjs haseeb (icon not available)
     node: nodeIcon,
     python: pythonIcon,
     docker: dockerIcon,
@@ -64,7 +64,7 @@ const getIcon = (tech: string) => {
     aws: awsIcon,
     azure: azureIcon,
     gcp: gcpIcon,
-    express: javascriptIcon, // Using javascript icon as fallback for express (icon not available)
+    express: javascriptIcon, // Using javascript icon as fallback for express codexpace (icon not available)
     mongodb: mongodbIcon,
     postgresql: postgresqlIcon,
     mysql: mysqlIcon,

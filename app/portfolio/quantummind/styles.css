@@ -1,0 +1,90 @@
+.quantum-banner {
+  background-image: url(../../../public/assets/portfolio/quantum/background.png);
+  background-size: cover;
+  /* background-position: center; */
+  background-repeat: no-repeat;
+  height: 90vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.quantumbox1{
+    display: flex;
+    gap: 40px;
+    padding: 40px 0;
+}
+
+.quantumbox1-content{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.quantumbox1-img{
+    width: 50%;
+}
+
+.quantumbox1 img{
+    width: 100%;
+}
+
+.quantumbox2-content{
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.quantumbox2-img{
+    width: 40%;
+}
+
+.quantumbox2 img{
+    width: 100%;
+}
+
+.quantumbox3-content{
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.quantumbox3-img{
+    width: 60%;
+}
+
+.quantumbox3 img{
+    width: 100%;
+}
+
+@media (max-width: 768px){
+    .quamtumboxes{
+        padding-top: 40px;
+    }
+    .quantumbox1{
+        flex-direction: column;
+        padding: 0;
+        padding-bottom: 40px;
+    }
+
+    .quantumbox1-content,
+    .quantumbox1-img{
+        width: 100%;
+    }
+
+    #quantumbox2{
+        flex-direction: column-reverse;
+    }
+
+    .quantumbox2-content,
+    .quantumbox2-img{
+        width: 100%;
+    }
+    .quantumbox3-content,
+    .quantumbox3-img{
+        width: 100%;
+    }
+}
