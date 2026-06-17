@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 
-const BACKEND_URL = process.env.BACKEND_API_URL || 'https://careers.codexpace.com';
+const BACKEND_URL = (process.env.BACKEND_API_URL || 'https://careers.codexpace.com').replace(/\/$/, '');
 
 export async function POST(request: NextRequest) {
   try {
@@ -10,10 +10,30 @@ export async function POST(request: NextRequest) {
     // Forward the form data to the backend
     const response = await fetch(`${BACKEND_URL}/api/applications/apply/`, {
       method: 'POST',
-      body: formData, // FormData can be sent directly
+      headers: {
+        'Accept': 'application/json',
+        'User-Agent': 'Mozilla/5.0 (Vercel Proxy)',
+      },
+      body: formData,
     });
 
-    const data = await response.json();
+    const contentType = response.headers.get('content-type');
+    let data;
+    
+    if (contentType && contentType.includes('application/json')) {
+      data = await response.json();
+    } else {
+      const text = await response.text();
+      console.error(`Backend returned non-JSON response (${response.status}):`, text.substring(0, 200));
+      return NextResponse.json(
+        { 
+          status: 'error', 
+          message: `Backend returned ${response.status}`, 
+          debug: 'Response was not JSON. Check backend logs.' 
+        },
+        { status: response.status }
+      );
+    }
 
     if (!response.ok) {
       console.error(`Backend error (${response.status}):`, data);
