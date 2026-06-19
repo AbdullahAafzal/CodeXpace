@@ -14,6 +14,7 @@ import Dillion from "../assets/projects/Dillion.png";
 import coder from "../assets/projects/coder.png";
 import yunakImage from "../assets/projects/1.png";
 import ftfImage from "../assets/projects/2.png";
+import quantummind from "../assets/projects/quantummind.png";
 
 const projects = [
   {
@@ -42,7 +43,7 @@ const projects = [
     name: "Quantum Mind",
     description:
       "Quantum Mind is a modern personal development platform that empowers users to enhance their mindset, boost productivity, and achieve their goals through interactive learning, progress tracking, and personalized growth experiences. Designed for accessibility and engagement, it helps users build positive habits and unlock their true potential.",
-    image: Liberty
+    image: quantummind
   },
   {
     id: "loyalific",

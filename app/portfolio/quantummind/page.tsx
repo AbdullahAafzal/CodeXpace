@@ -1,7 +1,7 @@
 import React from "react";
 import "./styles.css";
 
-export default function QuantumMindPortfolio() {
+function QuantumMindPortfolio() {
   return (
     <div className="min-h-screen bg-white text-[#111230]">
       <div className="relative overflow-hidden quantum-banner">
@@ -175,41 +175,12 @@ export default function QuantumMindPortfolio() {
                 ))}
               </div>
             </div> */}
-
-            {/* <div className="rounded-[2rem] border border-slate-800 bg-slate-950/80 p-8 shadow-[0_30px_80px_rgba(15,23,42,0.35)]">
-              <h2 className="text-3xl md:text-4xl font-semibold text-white mb-5">
-                02 Client Overview
-              </h2>
-              <p className="text-base lg:text-[20px] leading-8 text-slate-300">
-                Quantum Mind is a digital mental wellness platform built for individuals who need tailored support for stress, anxiety, sleep, and daily emotional balance. The platform combines AI-driven insights with evidence-based sessions to create an engaging and healing experience.
-              </p>
-            </div>
-
-            
-
-            <div className="rounded-[2rem] border border-slate-800 bg-slate-950/80 p-8 shadow-[0_30px_80px_rgba(15,23,42,0.35)]">
-              <h2 className="text-3xl md:text-4xl font-semibold text-white mb-5">
-                04 Our Solution
-              </h2>
-              <p className="text-base lg:text-[20px] leading-8 text-slate-300 mb-4">
-                We created Quantum Mind as a responsive platform that offers AI-powered recommendations, mood tracking, guided meditation, and evidence-based content. The experience is built to be calm, modern, and supportive for users at every stage of their wellness journey.
-              </p>
-              <p className="text-base lg:text-[20px] leading-8 text-slate-300">
-                The platform features a clean interface, habit reminders, progress analytics, and personalized session plans that help users stay consistent while improving focus, emotional awareness, and daily wellbeing.
-              </p>
-            </div>
-
-            <div className="rounded-[2rem] border border-slate-800 bg-slate-950/80 p-8 shadow-[0_30px_80px_rgba(15,23,42,0.35)]">
-              <h2 className="text-3xl md:text-4xl font-semibold text-white mb-5">
-                05 Conclusion
-              </h2>
-              <p className="text-base lg:text-[20px] leading-8 text-slate-300">
-                Quantum Mind is more than an app — it is a compassionate companion for better mental health. By combining AI personalization with guided support and engaging design, the platform empowers users to live more balanced, mindful, and productive lives.
-              </p>
-            </div> */}
           </div>
         </div>
       </section>
     </div>
   );
 }
+
+
+export default QuantumMindPortfolio;
