@@ -14,9 +14,11 @@ function QuantumMindPortfolio() {
               Quantum Mind
             </h1>
             <p className="mt-6 max-w-2xl text-base sm:text-lg lg:text-xl text-[#939ab4]">
-              Transforming mental wellness with AI-powered guidance and support
-              through personalized sessions, behavior tracking, and immersive
-              habit-building tools.
+              Transforming mental wellness through AI-powered guidance,
+              personalized therapy sessions, emotion tracking, and
+              habit-building tools. Quantum Mind empowers individuals to better
+              understand their emotional health, reduce stress, and develop
+              sustainable habits for a healthier and more balanced lifestyle.
             </p>
           </div>
         </div>
@@ -31,10 +33,17 @@ function QuantumMindPortfolio() {
                   Executive Summary
                 </h2>
                 <p className="text-base lg:text-[20px] leading-8 text-[#76777a]">
-                  Quantum Mind was built to make mental wellness support
-                  accessible, personalized, and effective through Al-driven
-                  recommendations, guided sessions, and real-time emotional
-                  tracking.
+                  Quantum Mind was developed to redefine the way people approach
+                  mental wellness by making personalized support more
+                  accessible, engaging, and effective. The platform combines
+                  AI-powered recommendations, guided wellness sessions, mood
+                  tracking, and habit-building tools to help users better
+                  understand their emotional well-being and develop healthier
+                  daily routines. By providing personalized experiences and
+                  actionable insights, Quantum Mind empowers individuals to take
+                  control of their mental health, manage stress more
+                  effectively, and achieve long-term personal growth through a
+                  modern and user-friendly digital experience.
                 </p>
               </div>
               <div className="quantumbox1-img overflow-hidden rounded-3xl">
@@ -59,9 +68,15 @@ function QuantumMindPortfolio() {
                   Client Overview
                 </h2>
                 <p className="text-base lg:text-[20px] leading-8 text-[#76777a]">
-                  Quantum Mind is a digital mental wellness platform designed to
-                  support individuals in managing stress, anxiety, improving
-                  well-being.
+                  Quantum Mind is an innovative mental wellness platform focused
+                  on helping individuals improve their emotional well-being
+                  through technology-driven solutions. Designed for users
+                  seeking a more personalized approach to mental health, the
+                  platform offers AI-guided support, progress tracking,
+                  self-reflection tools, and interactive wellness sessions. Its
+                  goal is to create a supportive environment where users can
+                  build positive habits, strengthen emotional resilience, and
+                  maintain a healthier balance in their everyday lives.
                 </p>
               </div>
             </div>
@@ -72,9 +87,11 @@ function QuantumMindPortfolio() {
                   The Challenge
                 </h2>
                 <p className="text-base lg:text-[20px] leading-8 text-[#76777a] pb-8">
-                  People often struggle to manage stress, anxiety, and daily
-                  emotions. Traditional solutions are either expensive, not
-                  personalized, or not easily accessible.
+                  Many individuals struggle to maintain consistent mental
+                  wellness practices due to limited access to personalized
+                  support, difficulty tracking emotional patterns, and a lack of
+                  engaging self-improvement tools. Traditional solutions often
+                  fail to provide real-time guidance and actionable insights.
                 </p>
                 <div className="grid gap-4 sm:grid-cols-2">
                   {[
@@ -118,10 +135,16 @@ function QuantumMindPortfolio() {
                   Our Solution
                 </h2>
                 <p className="text-base lg:text-[20px] leading-8 text-[#76777a]">
-                  We developed Quantum Mind as an Al-powered platform that
-                  offers personalized guidance, mood tracking, and
-                  evidence-based sessions to help users improve their Ouatum
-                  Mind mental well-being.
+                  To address the growing need for accessible and personalized
+                  mental wellness support, we designed and developed Quantum
+                  Mind as an intelligent digital platform powered by AI. The
+                  solution provides users with tailored recommendations, guided
+                  therapeutic experiences, emotion tracking, and progress
+                  monitoring within a seamless and engaging interface. By
+                  combining advanced technology with evidence-based wellness
+                  practices, Quantum Mind delivers a personalized journey that
+                  helps users stay motivated, track their growth, and make
+                  meaningful improvements to their mental well-being over time.
                 </p>
               </div>
             </div>
@@ -132,10 +155,11 @@ function QuantumMindPortfolio() {
                   Conclusion
                 </h2>
                 <p className="text-base lg:text-[20px] leading-8 text-[#76777a]">
-                  Quantum Mind is more than an app - it's a companion for better
-                  mental health. By combining Al, personalised guidance, and
-                  engaging design, we created a platform that empowers users to
-                  live a calmer, healthier, and more balanced life.
+                  Quantum Mind is more than a wellness application—it's a
+                  personalized mental wellness companion. Through intelligent
+                  insights, engaging experiences, and continuous emotional
+                  support, the platform helps users develop healthier habits,
+                  strengthen resilience, and achieve long-term well-being.
                 </p>
               </div>
               <div className="quantumbox3-img overflow-hidden rounded-3xl">
@@ -181,6 +205,5 @@ function QuantumMindPortfolio() {
     </div>
   );
 }
-
 
 export default QuantumMindPortfolio;

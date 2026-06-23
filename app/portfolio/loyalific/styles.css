@@ -1,0 +1,29 @@
+.loyalific-banner {
+  background-image: url(../../../public/assets/portfolio/loyalific/banner.PNG);
+  background-size: 100% 100%;
+  /* background-position: center; */
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+@media (max-width: 1024px) {
+  .challenge-solution-box {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 768px) {
+  .loyalific-banner {
+    min-height: 75vh;
+  }
+}
+
+@media (max-width: 550px) {
+  .loyalific-banner {
+    min-height: 50vh;
+  }
+}
