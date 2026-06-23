@@ -53,6 +53,13 @@ const projects = [
     image: HT
   },
   {
+    id: "womengem",
+    name: "WomenGem",
+    description:
+      "WomenGem is a comprehensive platform designed specifically for women, offering resources, community support, and personalized content to empower and inspire. The platform features expert advice, wellness tools, and a supportive community to help women achieve their goals and live their best lives.",
+    image: HT
+  },
+  {
     id: "liberty",
     name: "Liberty91",
     description:
