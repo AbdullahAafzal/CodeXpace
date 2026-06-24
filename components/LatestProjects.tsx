@@ -54,7 +54,7 @@ const projects = [
   },
   {
     id: "womengem",
-    name: "WomenGem",
+    name: "Women's Gem",
     description:
       "WomenGem is a comprehensive platform designed specifically for women, offering resources, community support, and personalized content to empower and inspire. The platform features expert advice, wellness tools, and a supportive community to help women achieve their goals and live their best lives.",
     image: HT
@@ -201,12 +201,23 @@ export default function LatestProjects() {
                     />
                   </div>
 
-                  <Link
-                    href={`/portfolio/${project.id}`}
-                    className="absolute bottom-4 left-4 right-4 text-center px-4 py-2 border border-red-500/30 text-red-400/80 rounded-lg hover:bg-red-500/10 transition bg-black/40"
-                  >
-                    See Details
-                  </Link>
+                  {project.id === "lowcoder" ? (
+                    <a
+                      href="https://www.lowcoder.cloud/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="absolute bottom-4 left-4 right-4 text-center px-4 py-2 border border-red-500/30 text-red-400/80 rounded-lg hover:bg-red-500/10 transition bg-black/40"
+                    >
+                      See Details
+                    </a>
+                  ) : (
+                    <Link
+                      href={`/portfolio/${project.id}`}
+                      className="absolute bottom-4 left-4 right-4 text-center px-4 py-2 border border-red-500/30 text-red-400/80 rounded-lg hover:bg-red-500/10 transition bg-black/40"
+                    >
+                      See Details
+                    </Link>
+                  )}
 
                 </div>
               ))}

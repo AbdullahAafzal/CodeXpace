@@ -9,8 +9,6 @@ function HTportfolio() {
         <div className="ht-banner-content max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 animate-slide-up-light">
           <div className="ht-banner-info text-start mb-5">
             <span>CASE STUDY</span>
-            <span>MARCH 24, 2021</span>
-            <span>5 MIN READ</span>
           </div>
           <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-7 banner-heading">
             Hammer and Tongues Auctioneers: Digitizing the Auction Experience
@@ -29,7 +27,7 @@ function HTportfolio() {
             </a>
             <a href="/">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
-                <path d="M453.2 112L523.8 112L369.6 288.2L551 528L409 528L297.7 382.6L170.5 528L99.8 528L264.7 339.5L90.8 112L236.4 112L336.9 244.9L453.2 112zM428.4 485.8L467.5 485.8L215.1 152L173.1 152L428.4 485.8z" />
+                <path d="M196.3 512L103.4 512L103.4 212.9L196.3 212.9L196.3 512zM149.8 172.1C120.1 172.1 96 147.5 96 117.8C96 103.5 101.7 89.9 111.8 79.8C121.9 69.7 135.6 64 149.8 64C164 64 177.7 69.7 187.8 79.8C197.9 89.9 203.6 103.6 203.6 117.8C203.6 147.5 179.5 172.1 149.8 172.1zM543.9 512L451.2 512L451.2 366.4C451.2 331.7 450.5 287.2 402.9 287.2C354.6 287.2 347.2 324.9 347.2 363.9L347.2 512L254.4 512L254.4 212.9L343.5 212.9L343.5 253.7L344.8 253.7C357.2 230.2 387.5 205.4 432.7 205.4C526.7 205.4 544 267.3 544 347.7L544 512L543.9 512z" />
               </svg>
             </a>
           </div>
@@ -51,7 +49,7 @@ function HTportfolio() {
               To support this vision, a centralized auction management platform
               was developed, consisting of a mobile application and a web-based
               administrative dashboard. The solution enabled buyers, sellers,
-              and vendors to engage through a unified digital ecosystem while
+              and vendors to engage through a unified online ecosystem while
               providing administrators with greater control over auction
               operations.
             </p>
@@ -119,9 +117,9 @@ function HTportfolio() {
             <p className="text-black lg:text-[20px] pb-3">
               The solution digitized the entire auction lifecycle, enabling
               buyers, sellers, and vendors to interact through a single
-              platform. Users could discover auctions, complete registration and
+              platform. Users could browse auctions, complete registration and
               document verification, participate in both live and timed
-              auctions, and securely complete payments online.
+              auctions, and securely process the payments through the platform.
             </p>
             <p className="text-black lg:text-[20px] pb-3">
               For administrators, the platform provided centralized control over

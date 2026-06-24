@@ -48,7 +48,7 @@ function QuantumMindPortfolio() {
               </div>
               <div className="quantumbox1-img overflow-hidden rounded-3xl">
                 <img
-                  src="/assets/portfolio/quantum/summary6.jpeg"
+                  src="/assets/portfolio/quantum/summary.png"
                   alt="Summary img"
                   className="h-auto rounded-3xl"
                 />
@@ -58,7 +58,7 @@ function QuantumMindPortfolio() {
             <div className="quantumbox1" id="quantumbox2">
               <div className="quantumbox1-img overflow-hidden rounded-3xl">
                 <img
-                  src="/assets/portfolio/quantum/overview1.jpeg"
+                  src="/assets/portfolio/quantum/overview.png"
                   alt="Summary img"
                   className="h-auto rounded-3xl"
                 />
@@ -104,7 +104,7 @@ function QuantumMindPortfolio() {
                   ].map((item) => (
                     <div
                       key={item}
-                      className="rounded-3xl bg-slate-900/80 p-5 text-slate-300"
+                      className="rounded-3xl bg-[#111230] shadow-[0px_0px_10px_2px_#9b99a8] p-5 text-slate-300"
                     >
                       {item}
                     </div>
@@ -164,41 +164,13 @@ function QuantumMindPortfolio() {
               </div>
               <div className="quantumbox3-img overflow-hidden rounded-3xl">
                 <img
-                  src="/assets/portfolio/quantum/solution.png"
+                  src="/assets/portfolio/quantum/conclusion.jpeg"
                   alt="Summary img"
                   className="h-auto rounded-3xl"
                 />
               </div>
             </div>
 
-            {/* <div className="">
-              <h2 className="text-3xl md:text-4xl font-bold mb-5 text-[#111230]">
-                The Challenge
-              </h2>
-              <p className="text-base lg:text-[20px] leading-8 text-[#76777a]">
-                Many people struggle to manage stress, anxiety, and emotional
-                health. Traditional wellness solutions often feel impersonal,
-                expensive, or difficult to use, so users need a more intuitive
-                and motivating alternative.
-              </p>
-              <div className="grid gap-4 sm:grid-cols-2">
-                {[
-                  "Lack of personalized mental wellness guidance",
-                  "Limited accessibility to professional support",
-                  "Difficulty tracking emotions and progress",
-                  "Need for an engaging, easy-to-use solution",
-                  "Low motivation and inconsistent practice",
-                  "High cost of traditional therapy and programs",
-                ].map((item) => (
-                  <div
-                    key={item}
-                    className="rounded-3xl border border-slate-800 bg-slate-900/80 p-5 text-slate-300"
-                  >
-                    {item}
-                  </div>
-                ))}
-              </div>
-            </div> */}
           </div>
         </div>
       </section>

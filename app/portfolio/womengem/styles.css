@@ -1,5 +1,5 @@
 .womengem-banner {
-  background-image: url(../../../public/assets/portfolio/womengem/banner.PNG);
+  background-image: url(../../../public/assets/portfolio/womengem/banner1.jpeg);
   background-size: 100% 100%;
   /* background-position: center; */
   background-repeat: no-repeat;
@@ -7,4 +7,32 @@
   position: relative;
   display: flex;
   align-items: center;
+}
+
+@media (max-width: 1024px) {
+  .vision{
+    border-right: none;
+    padding-right: 0;
+  }
+  .goal{
+    padding-left: 0;
+  }
+}
+
+@media (max-width: 990px) {
+  .womengem-banner {
+    min-height: 85vh;
+  }
+}
+
+@media (max-width: 768px) {
+  .womengem-banner {
+    min-height: 70vh;
+  }
+}
+
+@media (max-width: 550px) {
+  .womengem-banner {
+    min-height: 50vh;
+  }
 }
