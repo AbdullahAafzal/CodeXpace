@@ -3,6 +3,7 @@
 import { useState, useRef, useEffect } from "react";
 import Image from "next/image";
 import "./styles.css";
+// import Footer from "@/components/Footer";
 import logo from "../../../assets/portfolio/ftf/darkLogo.png";
 import logoLight from "../../../assets/portfolio/ftf/lightLogo.png";
 import backgroundImage from "../../../assets/portfolio/ftf/back.png";
@@ -29,7 +30,7 @@ export default function FTFPortfolio() {
     section7: 0,
     section8: 0,
     section9: 0,
-    section10: 0
+    section10: 0,
   });
 
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -60,17 +61,23 @@ export default function FTFPortfolio() {
   const section9ScrollRef = useRef<HTMLDivElement>(null);
   const section10ScrollRef = useRef<HTMLDivElement>(null);
 
-  const handleScroll = (sectionKey: string, scrollRef: React.RefObject<HTMLDivElement>) => {
+  const handleScroll = (
+    sectionKey: string,
+    scrollRef: React.RefObject<HTMLDivElement>,
+  ) => {
     if (scrollRef.current) {
       const scrollLeft = scrollRef.current.scrollLeft;
       setScrollPositions((prev) => ({
         ...prev,
-        [sectionKey]: scrollLeft
+        [sectionKey]: scrollLeft,
       }));
     }
   };
 
-  const handleButtonClick = (scrollRef: React.RefObject<HTMLDivElement>, sectionKey: string) => {
+  const handleButtonClick = (
+    scrollRef: React.RefObject<HTMLDivElement>,
+    sectionKey: string,
+  ) => {
     if (scrollRef.current) {
       const container = scrollRef.current;
       const scrollLeft = container.scrollLeft;
@@ -82,13 +89,13 @@ export default function FTFPortfolio() {
         // Scroll left (back to staff app)
         container.scrollTo({
           left: 0,
-          behavior: "smooth"
+          behavior: "smooth",
         });
       } else {
         // Scroll right (to client app)
         container.scrollTo({
           left: scrollWidth - clientWidth,
-          behavior: "smooth"
+          behavior: "smooth",
         });
       }
     }
@@ -104,7 +111,7 @@ export default function FTFPortfolio() {
 
   useEffect(() => {
     // Scroll to top when portfolio page mounts
-    window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+    window.scrollTo({ top: 0, left: 0, behavior: "instant" });
     document.documentElement.scrollTop = 0;
     document.body.scrollTop = 0;
 
@@ -118,7 +125,7 @@ export default function FTFPortfolio() {
       { ref: section7ScrollRef, key: "section7" },
       { ref: section8ScrollRef, key: "section8" },
       { ref: section9ScrollRef, key: "section9" },
-      { ref: section10ScrollRef, key: "section10" }
+      { ref: section10ScrollRef, key: "section10" },
     ];
 
     scrollRefs.forEach(({ ref, key }) => {
@@ -129,7 +136,7 @@ export default function FTFPortfolio() {
 
     // Cleanup: scroll to top when component unmounts (user navigates away)
     return () => {
-      window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+      window.scrollTo({ top: 0, left: 0, behavior: "instant" });
       document.documentElement.scrollTop = 0;
       document.body.scrollTop = 0;
     };
@@ -154,17 +161,23 @@ export default function FTFPortfolio() {
     const section10Video = "/assets/portfolio/ftf/section10.MP4";
     const section10VideoLight = "/assets/portfolio/ftf/section10-Light.MP4";
     const staffSection3Video = "/assets/portfolio/ftf/staffSection-3.mp4";
-    const staffSection3VideoLight = "/assets/portfolio/ftf/staffSectionLight-3.MP4";
+    const staffSection3VideoLight =
+      "/assets/portfolio/ftf/staffSectionLight-3.MP4";
     const staffSection4Video = "/assets/portfolio/ftf/staffSection-4.mp4";
-    const staffSection4VideoLight = "/assets/portfolio/ftf/staffSectionLight-4.MP4";
+    const staffSection4VideoLight =
+      "/assets/portfolio/ftf/staffSectionLight-4.MP4";
     const staffSection5Video = "/assets/portfolio/ftf/staffSection-5.mp4";
-    const staffSection5VideoLight = "/assets/portfolio/ftf/staffSectionLight-5.MP4";
+    const staffSection5VideoLight =
+      "/assets/portfolio/ftf/staffSectionLight-5.MP4";
     const staffSection6Video = "/assets/portfolio/ftf/staffSection-6.mp4";
-    const staffSection6VideoLight = "/assets/portfolio/ftf/staffSectionLight-6.MP4";
+    const staffSection6VideoLight =
+      "/assets/portfolio/ftf/staffSectionLight-6.MP4";
     const staffSection7Video = "/assets/portfolio/ftf/staffSection-7.mp4";
-    const staffSection7VideoLight = "/assets/portfolio/ftf/staffSectionLight-7.MP4";
+    const staffSection7VideoLight =
+      "/assets/portfolio/ftf/staffSectionLight-7.MP4";
     const staffSection8Video = "/assets/portfolio/ftf/staffSection-8.mp4";
-    const staffSection8VideoLight = "/assets/portfolio/ftf/staffSectionLight-8.MP4";
+    const staffSection8VideoLight =
+      "/assets/portfolio/ftf/staffSectionLight-8.MP4";
 
     // Ensure video plays when component mounts or theme changes
     if (videoRef.current) {
@@ -282,13 +295,37 @@ export default function FTFPortfolio() {
   }, [isLightMode]);
 
   return (
-    <div className="ftf-portfolio-wrapper app-wrapper">
+    <div className="ftf-portfolio-wrapper relative app-wrapper">
+      <a
+        href="/"
+        className="absolute z-10 top-4 left-20 inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-3 text-sm font-semibold text-white shadow-lg shadow-black/30 backdrop-blur transition-all duration-300 hover:bg-white/15 hover:text-white hover:shadow-xl"
+      >
+        <span className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-[#ffffff15] text-white border border-white/20">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            stroke="currentColor"
+            height="16"
+            width="16"
+            viewBox="0 0 24 24"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+              d="M15 19l-7-7 7-7"
+            />
+          </svg>
+        </span>
+        Back
+      </a>
       {/* First Page */}
       <div
         className={`app ${isLightMode ? "light-mode" : ""}`}
         style={{
-          backgroundImage: `url(${isLightMode ? backgroundImageLight.src : backgroundImage.src
-            })`
+          backgroundImage: `url(${
+            isLightMode ? backgroundImageLight.src : backgroundImage.src
+          })`,
         }}
       >
         {/* Theme Toggle Button */}
@@ -319,6 +356,18 @@ export default function FTFPortfolio() {
             <div className="info-section">
               <p className="screen-count">THE FUTURE OF YOUR FITNESS IS NOW</p>
             </div>
+
+            <div className="mt-6 flex flex-wrap gap-3">
+            <a href="/services/mobile-app-development" className="inline-flex items-center justify-center rounded-full bg-white w-fit px-6 py-3 text-sm font-semibold text-black shadow-lg shadow-black-500/20 transition duration-300 hover:-translate-y-1">
+              Mobile App Development
+            </a>
+            <a href="/services/saas-development" className="inline-flex items-center justify-center rounded-full bg-white w-fit px-6 py-3 text-sm font-semibold text-black shadow-lg shadow-black-500/20 transition duration-300 hover:-translate-y-1">
+              SAAS Development
+            </a>
+            <a href="/services/custom-software-development" className="inline-flex items-center justify-center rounded-full bg-white w-fit px-6 py-3 text-sm font-semibold text-black shadow-lg shadow-black-500/20 transition duration-300 hover:-translate-y-1">
+              Custom Software Development
+            </a>
+          </div>
           </div>
 
           {/* Right Side - Phone Screens Gallery */}
@@ -1517,6 +1566,7 @@ export default function FTFPortfolio() {
           </div>
         </div>
       </div>
+      {/* <Footer theme={isLightMode ? "ftfLight" : "ftfDark"} /> */}
     </div>
   );
 }

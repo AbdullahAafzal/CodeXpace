@@ -1,15 +1,41 @@
 import React from "react";
 import "./styles.css";
+import Footer from "@/components/Footer";
 
 function QuantumMindPortfolio() {
   return (
     <div className="min-h-screen bg-white text-[#111230]">
       <div className="relative overflow-hidden quantum-banner">
+        <a
+          href="/"
+          className="absolute z-10 top-9 left-9 inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-3 text-sm font-semibold text-white shadow-lg shadow-black/30 backdrop-blur transition-all duration-300 hover:bg-white/15 hover:text-white hover:shadow-xl"
+        >
+          <span className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-[#ffffff15] text-white border border-white/20">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              stroke="currentColor"
+              height="16"
+              width="16"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M15 19l-7-7 7-7"
+              />
+            </svg>
+          </span>
+          Back
+        </a>
         <div className="container mx-auto px-4">
           <div className=" text-start">
-            {/* <span className="inline-flex rounded-3xl px-4 py-1 text-xs font-semibold uppercase text-white border border-white">
-              Case Study
-            </span> */}
+            <div className="ht-banner-info text-start mb-5">
+              <span className="inline-flex rounded-3xl px-4 py-1 text-xs font-semibold uppercase text-white border border-white">
+                CASE STUDY
+              </span>
+            </div>
             <h1 className="mt-6 text-4xl sm:text-5xl lg:text-6xl font-bold text-white">
               Quantum Mind
             </h1>
@@ -20,6 +46,27 @@ function QuantumMindPortfolio() {
               understand their emotional health, reduce stress, and develop
               sustainable habits for a healthier and more balanced lifestyle.
             </p>
+
+            <div className="mt-6 flex flex-wrap gap-3">
+              <a
+                href="/services/mobile-app-development"
+                className="inline-flex items-center justify-center rounded-full bg-white w-fit px-6 py-3 text-sm font-semibold text-black shadow-lg shadow-black-500/20 transition duration-300 hover:-translate-y-1"
+              >
+                Mobile App Development
+              </a>
+              <a
+                href="/services/saas-development"
+                className="inline-flex items-center justify-center rounded-full bg-white w-fit px-6 py-3 text-sm font-semibold text-black shadow-lg shadow-black-500/20 transition duration-300 hover:-translate-y-1"
+              >
+                SAAS Development
+              </a>
+              <a
+                href="/services/ai-machine-learning-development"
+                className="inline-flex items-center justify-center rounded-full bg-white w-fit px-6 py-3 text-sm font-semibold text-black shadow-lg shadow-black-500/20 transition duration-300 hover:-translate-y-1"
+              >
+                AI & Machine Learning Development
+              </a>
+            </div>
           </div>
         </div>
       </div>
@@ -170,10 +217,10 @@ function QuantumMindPortfolio() {
                 />
               </div>
             </div>
-
           </div>
         </div>
       </section>
+      <Footer theme="quantummind" />
     </div>
   );
 }

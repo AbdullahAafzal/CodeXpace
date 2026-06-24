@@ -1,13 +1,37 @@
 import React from "react";
 import "./styles.css";
+import Footer from "@/components/Footer";
 
 function womengem() {
   return (
     <div className="min-h-screen bg-[#FFF9FB]">
       <div className="relative overflow-hidden womengem-banner">
+        <a
+          href="/"
+          className="absolute z-10 top-9 left-9 inline-flex items-center gap-2 rounded-full border border-[#d81f74]/25 bg-white/10 px-4 py-3 text-sm font-semibold text-[#d81f74] shadow-lg shadow-[#d81f74]/10 backdrop-blur transition-all duration-300 hover:bg-[#d81f74]/10 hover:text-white hover:border-[#d81f74] hover:shadow-[#d81f74]/20"
+        >
+          <span className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-[#d81f74]/10 text-[#d81f74] border border-[#d81f74]/20">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              stroke="currentColor"
+              height="16"
+              width="16"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M15 19l-7-7 7-7"
+              />
+            </svg>
+          </span>
+          Back
+        </a>
         <div className="container mx-auto px-4">
           <div className=" text-start max-w-[650px]">
-            <span className="inline-flex text-xs font-semibold uppercase text-[#d81f74] border-b-2 border-[#d81f74]">
+            <span className="inline-flex rounded-3xl px-4 py-1 text-xs font-semibold uppercase text-[#d81f74] border border-[#d81f74]/20">
               Case Study
             </span>
             <h1 className="mt-6 text-4xl sm:text-5xl lg:text-6xl font-bold text-black">
@@ -22,6 +46,18 @@ function womengem() {
               journey, and weight goals with intelligent insights and a
               beautiful experience.
             </p>
+
+            <div className="mt-6 flex flex-wrap gap-3">
+            <a href="/services/mobile-app-development" className="inline-flex items-center justify-center rounded-full bg-white w-fit px-6 py-3 text-sm font-semibold text-black shadow-lg shadow-black-500/20 transition duration-300 hover:-translate-y-1">
+              Mobile App Development
+            </a>
+            <a href="/services/saas-development" className="inline-flex items-center justify-center rounded-full bg-white w-fit px-6 py-3 text-sm font-semibold text-black shadow-lg shadow-black-500/20 transition duration-300 hover:-translate-y-1">
+              SAAS Development
+            </a>
+            <a href="/services/custom-software-development" className="inline-flex items-center justify-center rounded-full bg-white w-fit px-6 py-3 text-sm font-semibold text-black shadow-lg shadow-black-500/20 transition duration-300 hover:-translate-y-1">
+              Custom Software Development
+            </a>
+          </div>
           </div>
         </div>
       </div>
@@ -138,55 +174,55 @@ function womengem() {
 
       <section className="pb-20">
         <div className="container mx-auto px-4">
-            <div className="grid gap-6 lg:grid-cols-[1fr_auto_1fr] items-center">
-              <div className="relative overflow-hidden rounded-[2rem] border border-[#ebd3e0]">
-                <img
-                  src="/assets/portfolio/womengem/challenge.jpeg"
-                  alt="Without Women’s Gem"
-                  className="w-full h-full min-h-[350px]"
-                />
-                <div className="absolute inset-x-0 top-6 px-6">
-                  <h3 className="text-2xl font-semibold text-black">
-                    Without Women’s Gem
-                  </h3>
-                </div>
-                <div className="absolute inset-x-0 top-20 px-6">
-                  <ul className="space-y-3 text-sm leading-7 text-black drop-shadow-lg">
-                    <li>Using multiple apps for different needs</li>
-                    <li>Manual tracking and missed predictions</li>
-                    <li>No clear insights or correlations</li>
-                    <li>Scattered data and confusion</li>
-                    <li>Hard to stay consistent</li>
-                  </ul>
-                </div>
+          <div className="grid gap-6 lg:grid-cols-[1fr_auto_1fr] items-center">
+            <div className="relative overflow-hidden rounded-[2rem] border border-[#ebd3e0]">
+              <img
+                src="/assets/portfolio/womengem/challenge.jpeg"
+                alt="Without Women’s Gem"
+                className="w-full h-full min-h-[350px]"
+              />
+              <div className="absolute inset-x-0 top-6 px-6">
+                <h3 className="text-2xl font-semibold text-black">
+                  Without Women’s Gem
+                </h3>
               </div>
-              <div className="flex justify-center">
-                <span className="flex h-16 w-16 items-center justify-center rounded-full bg-[#d81f74] text-lg font-semibold text-white shadow-[0_10px_30px_-20px_rgba(0,0,0,0.2)]">
-                  VS
-                </span>
-              </div>
-              <div className="relative overflow-hidden rounded-[2rem] border border-[#f9d7e1]">
-                <img
-                  src="/assets/portfolio/womengem/solution.jpeg"
-                  alt="With Women’s Gem"
-                  className="w-full h-full min-h-[350px]"
-                />
-                <div className="absolute inset-x-0 top-6 px-6">
-                  <h3 className="text-2xl font-semibold text-[#d81f74]">
-                    With Women’s Gem
-                  </h3>
-                </div>
-                <div className="absolute inset-x-0 top-20 px-6">
-                  <ul className="space-y-3 text-sm leading-7 text-[#d81f74] drop-shadow-lg">
-                    <li>All-in-one platform for complete care</li>
-                    <li>Smart predictions and timely reminders</li>
-                    <li>Personalized insights and trends</li>
-                    <li>All your data in one secure place</li>
-                    <li>Stay consistent, stay in control</li>
-                  </ul>
-                </div>
+              <div className="absolute inset-x-0 top-20 px-6">
+                <ul className="space-y-3 text-sm leading-7 text-black drop-shadow-lg">
+                  <li>Using multiple apps for different needs</li>
+                  <li>Manual tracking and missed predictions</li>
+                  <li>No clear insights or correlations</li>
+                  <li>Scattered data and confusion</li>
+                  <li>Hard to stay consistent</li>
+                </ul>
               </div>
             </div>
+            <div className="flex justify-center">
+              <span className="flex h-16 w-16 items-center justify-center rounded-full bg-[#d81f74] text-lg font-semibold text-white shadow-[0_10px_30px_-20px_rgba(0,0,0,0.2)]">
+                VS
+              </span>
+            </div>
+            <div className="relative overflow-hidden rounded-[2rem] border border-[#f9d7e1]">
+              <img
+                src="/assets/portfolio/womengem/solution.jpeg"
+                alt="With Women’s Gem"
+                className="w-full h-full min-h-[350px]"
+              />
+              <div className="absolute inset-x-0 top-6 px-6">
+                <h3 className="text-2xl font-semibold text-[#d81f74]">
+                  With Women’s Gem
+                </h3>
+              </div>
+              <div className="absolute inset-x-0 top-20 px-6">
+                <ul className="space-y-3 text-sm leading-7 text-[#d81f74] drop-shadow-lg">
+                  <li>All-in-one platform for complete care</li>
+                  <li>Smart predictions and timely reminders</li>
+                  <li>Personalized insights and trends</li>
+                  <li>All your data in one secure place</li>
+                  <li>Stay consistent, stay in control</li>
+                </ul>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -319,6 +355,7 @@ function womengem() {
           </div>
         </div>
       </section>
+      <Footer theme="womengem" />
     </div>
   );
 }

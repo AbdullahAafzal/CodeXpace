@@ -3,6 +3,7 @@
 import { useState, useRef, useEffect } from "react";
 import Image from "next/image";
 import "./styles.css";
+import Footer from "@/components/Footer";
 import logo from "../../../assets/portfolio/yunuak/logo.png";
 import backgroundImage from "../../../assets/portfolio/yunuak/background.png";
 import secpageImage from "../../../assets/portfolio/yunuak/secpage.png";
@@ -541,6 +542,7 @@ export default function YunuakPortfolio() {
         </div>
       </div>
       
+      <Footer theme="yunuak" />
     </div>
   );
 }
