@@ -1,8 +1,11 @@
 import React from "react";
 import "./styles.css";
 
+import Footer from "@/components/Footer";
+
 function page() {
   return (
+    <>
     <div className="min-h-screen bg-[#020618] text-white">
       <div className="relative overflow-hidden loyalific-banner">
         <div className="container mx-auto px-4">
@@ -17,7 +20,7 @@ function page() {
               Build digital loyalty cards that keep customers coming back.
               Reward repeat visits, gain valuable customer insights, and send
               targeted updates and offers directly to your customer's mobile
-              wallets. All without requiring them to download an app.
+              wallets.
             </p>
           </div>
         </div>
@@ -56,7 +59,7 @@ function page() {
               <p className="text-gray-300 text-sm leading-relaxed">
                 Create and manage fully customizable digital loyalty cards with
                 flexible reward structures. Businesses can design branded
-                loyalty programs that motivate customers to return and unlock
+                loyalty cards that motivate customers to return and unlock
                 rewards through ongoing engagement.
               </p>
             </div>
@@ -125,7 +128,7 @@ function page() {
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
-            <div className="rounded-2xl border bg-[#060621] border-white/10 p-5 shadow-[0_20px_50px_rgba(0,0,0,0.3)]">
+            <div className="rounded-2xl border bg-[#060621] border-white/10 p-5 shadow-[0_20px_50px_rgba(0,0,0,0.3)] transition-transform duration-300 ease-out transform hover:-translate-y-2 hover:shadow-2xl hover:border-white/30 hover:bg-[#0e122f]">
               <div className="mb-4 rounded-xl overflow-hidden border border-white/10">
                 <img
                   src="/assets/portfolio/loyalific/overview.jpeg"
@@ -139,11 +142,11 @@ function page() {
               <p className="text-sm text-gray-300">
                 Get a complete overview of your loyalty program from a
                 centralized dashboard. Monitor loyalty cards, customers,
-                branches, managers, and overall platform activity in real-time.
+                branches, staff members, and overall platform activity in real-time.
               </p>
             </div>
 
-            <div className="rounded-2xl border border-white/10 bg-[#060621] p-5 shadow-[0_20px_50px_rgba(0,0,0,0.3)]">
+            <div className="rounded-2xl border border-white/10 bg-[#060621] p-5 shadow-[0_20px_50px_rgba(0,0,0,0.3)] transition-transform duration-300 ease-out transform hover:-translate-y-2 hover:shadow-2xl hover:border-white/30 hover:bg-[#0e122f]">
               <div className="mb-4 rounded-xl overflow-hidden border border-white/10">
                 <img
                   src="/assets/portfolio/loyalific/push-massage.jpeg"
@@ -161,7 +164,7 @@ function page() {
               </p>
             </div>
 
-            <div className="rounded-2xl border border-white/10 bg-[#060621] p-5 shadow-[0_20px_50px_rgba(0,0,0,0.3)]">
+            <div className="rounded-2xl border border-white/10 bg-[#060621] p-5 shadow-[0_20px_50px_rgba(0,0,0,0.3)] transition-transform duration-300 ease-out transform hover:-translate-y-2 hover:shadow-2xl hover:border-white/30 hover:bg-[#0e122f]">
               <div className="mb-4 rounded-xl overflow-hidden border border-white/10">
                 <img
                   src="/assets/portfolio/loyalific/customer.jpeg"
@@ -179,7 +182,7 @@ function page() {
               </p>
             </div>
 
-            <div className="rounded-2xl border border-white/10 bg-[#060621] p-5 shadow-[0_20px_50px_rgba(0,0,0,0.3)]">
+            <div className="rounded-2xl border border-white/10 bg-[#060621] p-5 shadow-[0_20px_50px_rgba(0,0,0,0.3)] transition-transform duration-300 ease-out transform hover:-translate-y-2 hover:shadow-2xl hover:border-white/30 hover:bg-[#0e122f]">
               <div className="mb-4 rounded-xl overflow-hidden border border-white/10">
                 <img
                   src="/assets/portfolio/loyalific/web-stamper.jpeg"
@@ -197,7 +200,7 @@ function page() {
               </p>
             </div>
 
-            <div className="rounded-2xl border border-white/10 bg-[#060621] p-5 shadow-[0_20px_50px_rgba(0,0,0,0.3)]">
+            <div className="rounded-2xl border border-white/10 bg-[#060621] p-5 shadow-[0_20px_50px_rgba(0,0,0,0.3)] transition-transform duration-300 ease-out transform hover:-translate-y-2 hover:shadow-2xl hover:border-white/30 hover:bg-[#0e122f]">
               <div className="mb-4 rounded-xl overflow-hidden border border-white/10">
                 <img
                   src="/assets/portfolio/loyalific/loyalty-card.jpeg"
@@ -279,10 +282,7 @@ function page() {
             {/* Center Logo/Icon */}
             <div className="flex justify-center">
               <div className="relative flex items-center justify-center">
-                <div className="absolute inset-0 bg-gradient-to-r from-[#7c3aed] via-[#6d28d9] to-[#a78bfa] rounded-full blur-3xl opacity-60" />
-                <div className="relative w-48 h-48 rounded-full bg-gradient-to-br from-[#a78bfa] to-[#7c3aed] flex items-center justify-center shadow-[0_0_60px_rgba(124,58,237,0.4)]">
-                  <span className="text-7xl font-bold text-white">L</span>
-                </div>
+                <img src="/assets/portfolio/loyalific/logo.png" alt="Loyalific Logo" className="w-[150px]" />
               </div>
             </div>
 
@@ -337,6 +337,9 @@ function page() {
       
 
     </div>
+    
+    <Footer />
+    </>
   );
 }
 

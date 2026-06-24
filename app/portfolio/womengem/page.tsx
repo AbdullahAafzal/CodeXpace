@@ -6,28 +6,27 @@ function womengem() {
     <div className="min-h-screen bg-[#FFF9FB]">
       <div className="relative overflow-hidden womengem-banner">
         <div className="container mx-auto px-4">
-          <div className=" text-start max-w-[550px]">
-            <span className="inline-flex rounded-3xl px-4 py-1 text-xs font-semibold uppercase text-white border border-white">
+          <div className=" text-start max-w-[650px]">
+            <span className="inline-flex text-xs font-semibold uppercase text-[#d81f74] border-b-2 border-[#d81f74]">
               Case Study
             </span>
-            <h1 className="mt-6 text-4xl sm:text-5xl lg:text-6xl font-bold text-[#a78bfa]">
-              WomenGem
+            <h1 className="mt-6 text-4xl sm:text-5xl lg:text-6xl font-bold text-black">
+              Women's <br /> <span className="text-[#d81f74]">Gem</span>
             </h1>
-            <p className="mt-6 max-w-2xl text-base sm:text-lg lg:text-xl text-white">
-              WomenGem is a comprehensive platform designed specifically for
-              women, offering resources, community support, and personalized
-              content to empower and inspire. The platform features expert
-              advice, wellness tools, and a supportive community to help women
-              achieve their goals and live their best lives. Reward repeat
-              visits, gain valuable customer insights, and send targeted updates
-              and offers directly to your customer's mobile wallets. All without
-              requiring them to download an app.
+            {/* <h4 className="mt-6 text-2xl font-semibold text-black">
+              YOUR HEALTH. YOUR JOURNEY. ALL IN ONE PLACE.
+            </h4> */}
+            <p className="mt-6 max-w-2xl text-base sm:text-lg lg:text-xl text-black">
+              Women's Gem is a comprehensive women's health platform that helps
+              users track their cycles, symptoms, Kick countiee pregnancy
+              journey, and weight goals with intelligent insights and a
+              beautiful experience.
             </p>
           </div>
         </div>
       </div>
 
-      <section className="py-24">
+      <section className="py-20">
         <div className="container mx-auto px-4">
           <p className="text-3xl sm:text-4xl lg:text-5xl mb-10 font-semibold text-[#1e2a46]">
             Our Story
@@ -40,7 +39,7 @@ function womengem() {
               </blockquote>
             </div>
 
-            <div className="border-r border-[#e8b1cd] pr-8">
+            <div className="border-r border-[#e8b1cd] pr-8 vision">
               <h2 className="text-2xl font-semibold text-[#d81f74]">
                 The Vision
               </h2>
@@ -51,7 +50,7 @@ function womengem() {
               <div className="mt-6 h-1 w-14 rounded-full bg-[#d81f74]" />
             </div>
 
-            <div className="pl-4">
+            <div className="pl-4 goal">
               <h2 className="text-2xl font-semibold text-[#d81f74]">
                 The Goal
               </h2>
@@ -66,13 +65,138 @@ function womengem() {
         </div>
       </section>
 
-      <section className="pb-24">
+      <section className="pb-20">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="relative">
+              <img
+                src="/assets/portfolio/womengem/period.jpeg"
+                alt="Screenshot 1"
+                className="rounded-lg min-h-[230px]"
+              />
+              <div className="absolute top-0 right-0 max-w-[290px] h-full px-8 py-12">
+                <h5 className="text-[#d81f74] text-lg font-bold">
+                  Period Tracking
+                </h5>
+                <p className="text-black text-lg pt-2">
+                  Beautiful calendar, accurate predictions, and complete cycle
+                  tracking at your fingertips.
+                </p>
+              </div>
+            </div>
+            <div className="relative">
+              <img
+                src="/assets/portfolio/womengem/symptom.jpeg"
+                alt="Screenshot 1"
+                className="rounded-lg min-h-[230px]"
+              />
+              <div className="absolute top-0 right-0 max-w-[290px] h-full px-8 py-12">
+                <h5 className="text-[#d81f74] text-lg font-bold">
+                  Symptom Tracking
+                </h5>
+                <p className="text-black text-lg pt-2">
+                  Log daily symptoms, set severity levels, and discover patterns
+                  with powerful trend analysis.
+                </p>
+              </div>
+            </div>
+            <div className="relative">
+              <img
+                src="/assets/portfolio/womengem/pregnancy.jpeg"
+                alt="Screenshot 1"
+                className="rounded-lg min-h-[230px]"
+              />
+              <div className="absolute top-0 left-0 max-w-[290px] h-full px-8 py-12">
+                <h5 className="text-[#d81f74] text-lg font-bold">
+                  Pregnancy Tracking
+                </h5>
+                <p className="text-black text-lg pt-2">
+                  Week-by-week guidance, kick counter, contraction timer, and
+                  appointment management.
+                </p>
+              </div>
+            </div>
+            <div className="relative">
+              <img
+                src="/assets/portfolio/womengem/weight.jpeg"
+                alt="Screenshot 1"
+                className="rounded-lg min-h-[230px]"
+              />
+              <div className="absolute top-0 left-0 max-w-[290px] h-full px-8 py-12">
+                <h5 className="text-[#d81f74] text-lg font-bold">
+                  Weight Management
+                </h5>
+                <p className="text-black text-lg pt-2">
+                  Track weight, monitor BMI set goals, and visualize your
+                  progress with elegant charts.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="pb-20">
+        <div className="container mx-auto px-4">
+            <div className="grid gap-6 lg:grid-cols-[1fr_auto_1fr] items-center">
+              <div className="relative overflow-hidden rounded-[2rem] border border-[#ebd3e0]">
+                <img
+                  src="/assets/portfolio/womengem/challenge.jpeg"
+                  alt="Without Women’s Gem"
+                  className="w-full h-full min-h-[350px]"
+                />
+                <div className="absolute inset-x-0 top-6 px-6">
+                  <h3 className="text-2xl font-semibold text-black">
+                    Without Women’s Gem
+                  </h3>
+                </div>
+                <div className="absolute inset-x-0 top-20 px-6">
+                  <ul className="space-y-3 text-sm leading-7 text-black drop-shadow-lg">
+                    <li>Using multiple apps for different needs</li>
+                    <li>Manual tracking and missed predictions</li>
+                    <li>No clear insights or correlations</li>
+                    <li>Scattered data and confusion</li>
+                    <li>Hard to stay consistent</li>
+                  </ul>
+                </div>
+              </div>
+              <div className="flex justify-center">
+                <span className="flex h-16 w-16 items-center justify-center rounded-full bg-[#d81f74] text-lg font-semibold text-white shadow-[0_10px_30px_-20px_rgba(0,0,0,0.2)]">
+                  VS
+                </span>
+              </div>
+              <div className="relative overflow-hidden rounded-[2rem] border border-[#f9d7e1]">
+                <img
+                  src="/assets/portfolio/womengem/solution.jpeg"
+                  alt="With Women’s Gem"
+                  className="w-full h-full min-h-[350px]"
+                />
+                <div className="absolute inset-x-0 top-6 px-6">
+                  <h3 className="text-2xl font-semibold text-[#d81f74]">
+                    With Women’s Gem
+                  </h3>
+                </div>
+                <div className="absolute inset-x-0 top-20 px-6">
+                  <ul className="space-y-3 text-sm leading-7 text-[#d81f74] drop-shadow-lg">
+                    <li>All-in-one platform for complete care</li>
+                    <li>Smart predictions and timely reminders</li>
+                    <li>Personalized insights and trends</li>
+                    <li>All your data in one secure place</li>
+                    <li>Stay consistent, stay in control</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+        </div>
+      </section>
+
+      <section className="pb-20">
         <div className="container mx-auto px-4">
           <h2 className="text-center text-3xl sm:text-4xl font-semibold text-[#1e2a46] mb-12">
             Powerful Capabilities, Designed For You
           </h2>
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5">
-            <div className="rounded-[1.75rem] border border-[#f4d4e6] p-6 text-center shadow-[0_20px_40px_-28px_rgba(216,31,116,0.2)]">
+            <div className="rounded-[1.75rem] border border-[#f4d4e6] p-6 text-center shadow-[0_20px_40px_-28px_rgba(216,31,116,0.2)] transition-transform duration-300 ease-out transform hover:-translate-y-2 hover:shadow-2xl hover:border-[#d81f74]/30 hover:bg-white/5">
               <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-[#fde8f2] text-[#d81f74]">
                 <svg
                   viewBox="0 0 24 24"
@@ -97,7 +221,7 @@ function womengem() {
               </p>
             </div>
 
-            <div className="rounded-[1.75rem] border border-[#f4d4e6] p-6 text-center shadow-[0_20px_40px_-28px_rgba(216,31,116,0.2)]">
+            <div className="rounded-[1.75rem] border border-[#f4d4e6] p-6 text-center shadow-[0_20px_40px_-28px_rgba(216,31,116,0.2)] transition-transform duration-300 ease-out transform hover:-translate-y-2 hover:shadow-2xl hover:border-[#d81f74]/30 hover:bg-white/5">
               <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-[#fde8f2] text-[#d81f74]">
                 <svg
                   viewBox="0 0 24 24"
@@ -122,7 +246,7 @@ function womengem() {
               </p>
             </div>
 
-            <div className="rounded-[1.75rem] border border-[#f4d4e6] p-6 text-center shadow-[0_20px_40px_-28px_rgba(216,31,116,0.2)]">
+            <div className="rounded-[1.75rem] border border-[#f4d4e6] p-6 text-center shadow-[0_20px_40px_-28px_rgba(216,31,116,0.2)] transition-transform duration-300 ease-out transform hover:-translate-y-2 hover:shadow-2xl hover:border-[#d81f74]/30 hover:bg-white/5">
               <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-[#e7f6f4] text-[#0f766e]">
                 <svg
                   viewBox="0 0 24 24"
@@ -145,7 +269,7 @@ function womengem() {
               </p>
             </div>
 
-            <div className="rounded-[1.75rem] border border-[#f4d4e6] p-6 text-center shadow-[0_20px_40px_-28px_rgba(216,31,116,0.2)]">
+            <div className="rounded-[1.75rem] border border-[#f4d4e6] p-6 text-center shadow-[0_20px_40px_-28px_rgba(216,31,116,0.2)] transition-transform duration-300 ease-out transform hover:-translate-y-2 hover:shadow-2xl hover:border-[#d81f74]/30 hover:bg-white/5">
               <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-[#eef5fb] text-[#2c5282]">
                 <svg
                   viewBox="0 0 24 24"
@@ -170,7 +294,7 @@ function womengem() {
               </p>
             </div>
 
-            <div className="rounded-[1.75rem] border border-[#f4d4e6] p-6 text-center shadow-[0_20px_40px_-28px_rgba(216,31,116,0.2)]">
+            <div className="rounded-[1.75rem] border border-[#f4d4e6] p-6 text-center shadow-[0_20px_40px_-28px_rgba(216,31,116,0.2)] transition-transform duration-300 ease-out transform hover:-translate-y-2 hover:shadow-2xl hover:border-[#d81f74]/30 hover:bg-white/5">
               <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-[#fde8f2] text-[#d81f74]">
                 <svg
                   viewBox="0 0 24 24"
@@ -195,8 +319,6 @@ function womengem() {
           </div>
         </div>
       </section>
-
-      
     </div>
   );
 }
