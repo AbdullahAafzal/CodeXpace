@@ -1,20 +1,34 @@
 import React from "react";
 import "./styles.css";
+import Footer from "@/components/Footer";
 
 function HTportfolio() {
   return (
     <div className="ht-section">
-      <div className="ht-banner flex justify-center items-center">
+      <div className="ht-banner relative flex justify-center items-center">
+        <a
+          href="/"
+          className="absolute z-10 top-9 left-9 inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-3 text-sm font-semibold text-white shadow-lg shadow-black/30 backdrop-blur transition-all duration-300 hover:bg-white/15 hover:text-white hover:shadow-xl"
+        >
+          <span className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-[#ffffff15] text-white border border-white/20">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" height="16" width="16" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 19l-7-7 7-7" />
+            </svg>
+          </span>
+          Back
+        </a>
         <div className="ht-banner-overlay"></div>
         <div className="ht-banner-content max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 animate-slide-up-light">
           <div className="ht-banner-info text-start mb-5">
-            <span>CASE STUDY</span>
+            <span className="inline-flex rounded-3xl px-4 py-1 text-xs font-semibold uppercase text-white border border-white">
+              CASE STUDY
+            </span>
           </div>
           <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-7 banner-heading">
             Hammer and Tongues Auctioneers: Digitizing the Auction Experience
             Across Africa
           </h1>
-          <div className="ht-banner-btn flex items-center gap-3">
+          <div className="ht-banner-icon flex items-center gap-3">
             <a href="/">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
                 <path d="M240 363.3L240 576L356 576L356 363.3L442.5 363.3L460.5 265.5L356 265.5L356 230.9C356 179.2 376.3 159.4 428.7 159.4C445 159.4 458.1 159.8 465.7 160.6L465.7 71.9C451.4 68 416.4 64 396.2 64C289.3 64 240 114.5 240 223.4L240 265.5L174 265.5L174 363.3L240 363.3z" />
@@ -31,6 +45,18 @@ function HTportfolio() {
               </svg>
             </a>
           </div>
+          <div className="mt-6 flex flex-wrap gap-3">
+            <a href="/services/mobile-app-development" className="inline-flex items-center justify-center rounded-full bg-white w-fit px-6 py-3 text-sm font-semibold text-black shadow-lg shadow-black-500/20 transition duration-300 hover:-translate-y-1">
+              Mobile App Development
+            </a>
+            <a href="/services/saas-development" className="inline-flex items-center justify-center rounded-full bg-white w-fit px-6 py-3 text-sm font-semibold text-black shadow-lg shadow-black-500/20 transition duration-300 hover:-translate-y-1">
+              SAAS Development
+            </a>
+            <a href="/services/custom-software-development" className="inline-flex items-center justify-center rounded-full bg-white w-fit px-6 py-3 text-sm font-semibold text-black shadow-lg shadow-black-500/20 transition duration-300 hover:-translate-y-1">
+              Custom Software Development
+            </a>
+          </div>
+
         </div>
       </div>
       <div className="ht-description-main">
@@ -169,6 +195,7 @@ function HTportfolio() {
           </div>
         </div>
       </div>
+      <Footer theme="ht" />
     </div>
   );
 }

@@ -27,23 +27,7 @@
   color: #fff;
 }
 
-.ht-banner-info span {
-  font-size: 14px;
-  color: #fff;
-  letter-spacing: 0.38px;
-  line-height: 16px;
-  font-weight: 700;
-  border-left: 1px solid #fff;
-  padding: 0 10px;
-}
-
-.ht-banner-info span:first-child {
-  padding: 0;
-  padding-right: 10px;
-  border-left: none;
-}
-
-.ht-banner-btn a {
+.ht-banner-icon a {
   background-color: #fff;
   border-radius: 50%;
   height: 30px;
@@ -51,11 +35,11 @@
   padding: 5px;
 }
 
-.ht-description-main{
-    background: #fff;
-    padding: 50px 0;
+.ht-description-main {
+  background: #fff;
+  padding: 50px 0;
 }
 
-.ht-description-heading{
-    color: #2e8d39;
+.ht-description-heading {
+  color: #2e8d39;
 }

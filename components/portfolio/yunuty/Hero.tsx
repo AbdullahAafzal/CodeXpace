@@ -26,6 +26,30 @@ export default function Hero() {
         <div className="absolute inset-0 bg-primary/20"></div>
       </div>
 
+      <a
+        href="/"
+        className="absolute z-10 top-9 left-9 inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-3 text-sm font-semibold text-white shadow-lg shadow-black/30 backdrop-blur transition-all duration-300 hover:bg-white/15 hover:text-white hover:shadow-xl"
+      >
+        <span className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-[#ffffff15] text-white border border-white/20">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            stroke="currentColor"
+            height="16"
+            width="16"
+            viewBox="0 0 24 24"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+              d="M15 19l-7-7 7-7"
+            />
+          </svg>
+        </span>
+        Back
+      </a>
+
       {/* Content with slide animation */}
       <div className="relative z-10 container mx-auto px-6 pt-4 pb-0">
         <div className="max-w-4xl mx-auto text-center animate-slide-up-light">
@@ -107,6 +131,27 @@ export default function Hero() {
               className="max-w-5xl mx-auto rounded-lg shadow-2xl"
               priority
             />
+          </div>
+
+          <div className="mt-6 flex flex-wrap gap-3">
+            <a
+              href="/services/mobile-app-development"
+              className="inline-flex items-center justify-center rounded-full bg-white w-fit px-6 py-3 text-sm font-semibold text-black shadow-lg shadow-black-500/20 transition duration-300 hover:-translate-y-1"
+            >
+              Mobile App Development
+            </a>
+            <a
+              href="/services/saas-development"
+              className="inline-flex items-center justify-center rounded-full bg-white w-fit px-6 py-3 text-sm font-semibold text-black shadow-lg shadow-black-500/20 transition duration-300 hover:-translate-y-1"
+            >
+              SAAS Development
+            </a>
+            <a
+              href="/services/custom-software-development"
+              className="inline-flex items-center justify-center rounded-full bg-white w-fit px-6 py-3 text-sm font-semibold text-black shadow-lg shadow-black-500/20 transition duration-300 hover:-translate-y-1"
+            >
+              Custom Software Development
+            </a>
           </div>
         </div>
       </div>
