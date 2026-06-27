@@ -43,8 +43,8 @@ const footerThemes: Record<FooterTheme, {
     textColor: '#d1d5db',
   },
   quantummind: {
-    footerClass: 'bg-[#111230] border-t border-[#5b70f1]/25',
-    socialBgColor: '#111230',
+    footerClass: 'bg-[#0d022c] border-t border-[#5b70f1]/25',
+    socialBgColor: '#0d022c',
     socialBorderColor: 'rgba(91, 112, 241, 0.2)',
     topPathColor: '#5b70f1',
     iconColor: 'rgb(91, 112, 241)',
