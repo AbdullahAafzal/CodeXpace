@@ -6,8 +6,38 @@
   scroll-behavior: smooth;
 }
 
-@media (max-width: 768px)  {
+/* Ensure desktop layout applies for very large screens */
+/* @media (min-width: 1600px) {
+  .ftf-portfolio-wrapper .app-page-2 {
+    height: auto;
+    width: 100%;
+  }
 
+  .ftf-portfolio-wrapper .section-view {
+    height: 100%;
+    width: 100%;
+    min-width: auto;
+  }
+
+  .ftf-portfolio-wrapper .screens-gallery-left {
+    width: 100%;
+  }
+
+  .ftf-portfolio-wrapper .phone-screens-stack {
+    min-width: auto;
+  }
+
+  .ftf-portfolio-wrapper .app-page-2 .branding-section-right {
+    width: 100%;
+    max-width: 55%;
+  }
+
+  .ftf-portfolio-wrapper .container {
+    flex-direction: row;
+  }
+} */
+
+@media (max-width: 768px) {
   .ftf-portfolio-wrapper .app-wrapper {
     overflow-x: hidden;
     -webkit-overflow-scrolling: touch;
@@ -87,7 +117,6 @@
   border-color: rgba(24, 188, 180, 1);
 }
 
-
 .ftf-portfolio-wrapper .app {
   width: 100vw;
   height: 800px;
@@ -98,7 +127,9 @@
   overflow: hidden;
   position: relative;
   flex-shrink: 0;
-  transition: background-color 0.5s ease, background-image 0.5s ease;
+  transition:
+    background-color 0.5s ease,
+    background-image 0.5s ease;
 }
 
 .ftf-portfolio-wrapper .app::before {
@@ -321,7 +352,7 @@
 }
 
 .ftf-portfolio-wrapper .app-page-4.light-mode .feature-text {
-  color: #1F1D1D;
+  color: #1f1d1d;
   text-shadow: 0 2px 8px rgba(255, 255, 255, 0.5);
 }
 
@@ -378,7 +409,7 @@
 }
 
 .ftf-portfolio-wrapper .app-page-5.light-mode .feature-text {
-  color: #1F1D1D;
+  color: #1f1d1d;
   text-shadow: 0 2px 8px rgba(255, 255, 255, 0.5);
 }
 
@@ -437,7 +468,7 @@
 }
 
 .ftf-portfolio-wrapper .app-page-6.light-mode .feature-text {
-  color: #1F1D1D;
+  color: #1f1d1d;
   text-shadow: 0 2px 8px rgba(255, 255, 255, 0.5);
 }
 
@@ -496,7 +527,7 @@
 }
 
 .ftf-portfolio-wrapper .app-page-7.light-mode .feature-text {
-  color: #1F1D1D;
+  color: #1f1d1d;
   text-shadow: 0 2px 8px rgba(255, 255, 255, 0.5);
 }
 
@@ -555,7 +586,7 @@
 }
 
 .ftf-portfolio-wrapper .app-page-8.light-mode .feature-text {
-  color: #1F1D1D;
+  color: #1f1d1d;
   text-shadow: 0 2px 8px rgba(255, 255, 255, 0.5);
 }
 
@@ -614,7 +645,7 @@
 }
 
 .ftf-portfolio-wrapper .app-page-9.light-mode .feature-text {
-  color: #1F1D1D;
+  color: #1f1d1d;
   text-shadow: 0 2px 8px rgba(255, 255, 255, 0.5);
 }
 
@@ -678,7 +709,7 @@
 }
 
 .ftf-portfolio-wrapper .app-page-10.light-mode .feature-text {
-  color: #1F1D1D;
+  color: #1f1d1d;
   text-shadow: 0 2px 8px rgba(255, 255, 255, 0.5);
 }
 
@@ -691,7 +722,6 @@
   position: relative;
   z-index: 1;
 }
-
 
 .ftf-portfolio-wrapper .container {
   display: flex;
@@ -752,7 +782,9 @@
   flex-shrink: 1;
   min-width: 0;
   text-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
-  transition: color 0.5s ease, text-shadow 0.5s ease;
+  transition:
+    color 0.5s ease,
+    text-shadow 0.5s ease;
 }
 
 /* Light Mode - Main Heading Color */
@@ -862,12 +894,14 @@
   letter-spacing: 2px;
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
   opacity: 0.95;
-  transition: color 0.5s ease, text-shadow 0.5s ease;
+  transition:
+    color 0.5s ease,
+    text-shadow 0.5s ease;
 }
 
 /* Light Mode - Slogan Color */
 .ftf-portfolio-wrapper .app.light-mode .screen-count {
-  color: #1F1D1D;
+  color: #1f1d1d;
   text-shadow: 0 2px 8px rgba(255, 255, 255, 0.5);
 }
 
@@ -894,15 +928,13 @@
   min-width: 800px;
 }
 
-@media (max-width: 1024px)  {
-
+@media (max-width: 1024px) {
   .ftf-portfolio-wrapper .phone-screens-stack {
     min-width: 600px;
   }
 }
 
-@media (max-width: 768px)  {
-
+@media (max-width: 768px) {
   .ftf-portfolio-wrapper .phone-screens-stack {
     min-width: unset;
   }
@@ -914,8 +946,13 @@
   height: 480px;
   object-fit: cover;
   border-radius: 28px;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6), 0 0 0 6px rgba(0, 0, 0, 0.2);
-  transition: transform 0.4s ease, z-index 0.4s ease, box-shadow 0.4s ease;
+  box-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.6),
+    0 0 0 6px rgba(0, 0, 0, 0.2);
+  transition:
+    transform 0.4s ease,
+    z-index 0.4s ease,
+    box-shadow 0.4s ease;
   cursor: pointer;
   margin-left: -80px;
   pointer-events: auto;
@@ -961,14 +998,18 @@
   transform: rotateY(0deg) rotateZ(0deg) scale(1.08) !important;
   z-index: 10 !important;
   opacity: 1 !important;
-  box-shadow: 0 30px 80px rgba(24, 188, 180, 0.5), 0 0 0 8px rgba(24, 188, 180, 0.3);
+  box-shadow:
+    0 30px 80px rgba(24, 188, 180, 0.5),
+    0 0 0 8px rgba(24, 188, 180, 0.3);
 }
 
 .ftf-portfolio-wrapper .phone-screen:nth-child(5):hover {
   transform: rotateY(0deg) rotateZ(0deg) scale(1.08) !important;
   z-index: 10 !important;
   opacity: 1 !important;
-  box-shadow: 0 30px 80px rgba(24, 188, 180, 0.5), 0 0 0 8px rgba(24, 188, 180, 0.3);
+  box-shadow:
+    0 30px 80px rgba(24, 188, 180, 0.5),
+    0 0 0 8px rgba(24, 188, 180, 0.3);
   position: relative;
 }
 
@@ -998,8 +1039,7 @@
   z-index: 1;
 }
 
-@media (max-width: 1400px)  {
-
+@media (max-width: 1499px) {
   .ftf-portfolio-wrapper .branding-section-right {
     padding-left: 0;
     margin-left: 0;
@@ -1112,7 +1152,7 @@
   height: auto;
   aspect-ratio: 77.6 / 163; /* iPhone 16 Pro Max: 77.6mm wide × 163mm tall */
   border-radius: 35px; /* iPhone 16 Pro Max rounded corners */
-  box-shadow: 
+  box-shadow:
     0 20px 60px rgba(0, 0, 0, 0.6),
     0 0 0 8px rgba(20, 100, 95, 0.6),
     0 0 0 12px rgba(20, 100, 95, 0.3),
@@ -1123,7 +1163,10 @@
   overflow: hidden;
   border: 2px solid rgba(20, 100, 95, 0.8);
   flex-shrink: 1;
-  transition: box-shadow 0.5s ease, border-color 0.5s ease, background 0.5s ease;
+  transition:
+    box-shadow 0.5s ease,
+    border-color 0.5s ease,
+    background 0.5s ease;
 }
 
 /* iPhone notch simulation */
@@ -1151,7 +1194,7 @@
 .ftf-portfolio-wrapper .app-page-8.light-mode .section-video,
 .ftf-portfolio-wrapper .app-page-9.light-mode .section-video,
 .ftf-portfolio-wrapper .app-page-10.light-mode .section-video {
-  box-shadow: 
+  box-shadow:
     0 20px 60px rgba(0, 0, 0, 0.3),
     0 0 0 8px rgba(0, 0, 0, 0.15),
     0 0 0 12px rgba(0, 0, 0, 0.05),
@@ -1204,27 +1247,70 @@
   letter-spacing: 0.5px;
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
   opacity: 0.95;
-  transition: color 0.5s ease, text-shadow 0.5s ease;
+  transition:
+    color 0.5s ease,
+    text-shadow 0.5s ease;
 }
 
 /* Light Mode - Feature Text */
 .ftf-portfolio-wrapper .app-page-2.light-mode .feature-text {
-  color: #1F1D1D;
+  color: #1f1d1d;
   text-shadow: 0 2px 8px rgba(255, 255, 255, 0.5);
 }
 
 .ftf-portfolio-wrapper .app-page-3.light-mode .feature-text {
-  color: #1F1D1D;
+  color: #1f1d1d;
   text-shadow: 0 2px 8px rgba(255, 255, 255, 0.5);
 }
 
 /* Responsive Design */
-@media (max-width: 1400px)  {
+@media (max-width: 1200px) {
+  .ftf-portfolio-wrapper .app-page-2,
+  .ftf-portfolio-wrapper .app-page-3,
+  .ftf-portfolio-wrapper .app-page-4,
+  .ftf-portfolio-wrapper .app-page-5,
+  .ftf-portfolio-wrapper .app-page-6,
+  .ftf-portfolio-wrapper .app-page-7,
+  .ftf-portfolio-wrapper .app-page-8,
+  .ftf-portfolio-wrapper .app-page-9,
+  .ftf-portfolio-wrapper .app-page-10 {
+    height: auto;
+    width: 100%;
+  }
+
+  .ftf-portfolio-wrapper .horizontal-scroll-container {
+    height: auto;
+  }
+
+  .ftf-portfolio-wrapper .section-video {
+    height: 500px;
+  }
+
+  .ftf-portfolio-wrapper .section-view {
+    height: 100%;
+    width: 100%;
+    min-width: auto;
+  }
+
+  .ftf-portfolio-wrapper .screens-gallery-left {
+    width: 100%;
+  }
+
+  .ftf-portfolio-wrapper .phone-screens-stack {
+    min-width: auto;
+  }
+
+  .ftf-portfolio-wrapper .app-page-2 .branding-section-right {
+    width: 100%;
+    max-width: 55%;
+    padding-left: 0;
+    margin-left: 0;
+  }
 
   .ftf-portfolio-wrapper .container {
     flex-direction: column;
     padding: 60px 60px;
-    height: 800px;
+    height: auto;
     gap: 40px;
     overflow: hidden;
     display: flex;
@@ -1239,7 +1325,7 @@
   .ftf-portfolio-wrapper .app-page-8 .container,
   .ftf-portfolio-wrapper .app-page-9 .container,
   .ftf-portfolio-wrapper .app-page-10 .container {
-    height: 680px;
+    height: auto;
     gap: 40px;
     overflow: hidden;
     display: flex;
@@ -1360,25 +1446,9 @@
     font-size: 48px;
     white-space: nowrap;
   }
-
-  .ftf-portfolio-wrapper .app::before {
-    width: 100vw;
-    background: linear-gradient(
-      to bottom,
-      rgba(0, 0, 0, 0.92) 0%,
-      rgba(0, 0, 0, 0.88) 50%,
-      rgba(0, 0, 0, 0.75) 65%,
-      rgba(0, 0, 0, 0.55) 75%,
-      rgba(0, 0, 0, 0.35) 85%,
-      rgba(0, 0, 0, 0.15) 92%,
-      rgba(0, 0, 0, 0.05) 96%,
-      transparent 100%
-    );
-  }
 }
 
-@media (max-width: 1024px)  {
-
+/* @media (max-width: 1024px) {
   .ftf-portfolio-wrapper .container {
     padding: 40px 30px;
     height: 800px;
@@ -1441,10 +1511,9 @@
     height: 45px;
     font-size: 20px;
   }
-}
+} */
 
-@media (max-width: 768px)  {
-
+@media (max-width: 768px) {
   .ftf-portfolio-wrapper .container {
     padding: 30px 20px;
     flex-direction: column;
@@ -1679,8 +1748,7 @@
   }
 }
 
-@media (max-width: 480px)  {
-
+@media (max-width: 480px) {
   .ftf-portfolio-wrapper .container {
     padding: 20px 15px;
     gap: 15px;
