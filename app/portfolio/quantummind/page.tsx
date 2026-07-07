@@ -67,7 +67,7 @@ function QuantumMindPortfolio() {
 
   return (
     <div className="bg-white text-[#0d022c]">
-      <div className="relative overflow-hidden bg-[#0d022c] py-16 md:py-0 md:h-[110vh] flex items-center">
+      <div className="relative overflow-hidden bg-[#0d022c] py-16 md:py-0 md:h-[120vh] flex items-center">
         <a
           href="/"
           className="absolute z-10 top-5 left-5 inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 p-2 text-sm font-semibold text-white shadow-lg shadow-black/30 backdrop-blur transition-all duration-300 hover:bg-white/15 hover:text-white hover:shadow-xl"
