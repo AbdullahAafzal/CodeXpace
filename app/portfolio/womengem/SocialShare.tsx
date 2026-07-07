@@ -33,7 +33,7 @@ export default function SocialShare() {
 
       {/* Instagram */}
       <a
-        href="https://www.instagram.com/codexpace/"
+        href="https://www.instagram.com/codexpaceofficial?igsh=cHd5bHhjODI4NjE5"
         target="_blank"
         rel="noopener noreferrer"
         className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-white text-black shadow-lg shadow-black/20 transition-all duration-300 hover:-translate-y-1.5 hover:bg-[transparent] hover:text-[#d81f74] border hover:border-[1px solid #fff]"
