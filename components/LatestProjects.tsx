@@ -6,15 +6,17 @@ import Link from "next/link";
 import { AnimatePresence, motion } from "framer-motion";
 
 import codaImage from "../assets/projects/Coda.png";
-import HT from "../assets/projects/3.png";
+import HT from "../assets/projects/h-t.png";
 import Liberty from "../assets/projects/Liberty.png";
 import Luminary from "../assets/projects/Luminary.png";
 import telegraphyImage from "../assets/projects/Palplug.png";
 import Dillion from "../assets/projects/Dillion.png";
-import coder from "../assets/projects/coder.png";
-import yunakImage from "../assets/projects/1.png";
-import ftfImage from "../assets/projects/2.png";
-import quantummind from "../assets/projects/quantummind.png";
+import coder from "../assets/projects/lowcoder.png";
+import yunakImage from "../assets/projects/yunity.png";
+import ftfImage from "../assets/projects/ftt.png";
+import quantummind from "../assets/projects/Quantum-mind.png";
+import loyalific from "../assets/projects/loyalific.png";
+import womengem from "../assets/projects/women'sgem.png";
 
 const projects = [
   {
@@ -50,14 +52,14 @@ const projects = [
     name: "Loyalific",
     description:
       "Build digital loyalty cards that keep customers coming back. Reward repeat visits, gain valuable customer insights, and send targeted updates and offers directly to your customer's mobile wallets. All without requiring them to download an app.",
-    image: HT
+    image: loyalific
   },
   {
     id: "womengem",
     name: "Women's Gem",
     description:
       "WomenGem is a comprehensive platform designed specifically for women, offering resources, community support, and personalized content to empower and inspire. The platform features expert advice, wellness tools, and a supportive community to help women achieve their goals and live their best lives.",
-    image: HT
+    image: womengem
   },
   {
     id: "liberty",
@@ -165,7 +167,7 @@ export default function LatestProjects() {
             Projects
           </span>
         </h2>
-        <div className="relative overflow-hidden">
+        <div className="relative">
 
           <AnimatePresence mode="wait" custom={direction}>
             <motion.div
@@ -183,37 +185,38 @@ export default function LatestProjects() {
                   key={project.id}
                   className="bg-black/40 p-4 rounded-xl border-[2px] border-red-500/20 relative"
                 >
-                  <h3 className="text-lg font-semibold text-white mb-2 w-fit py-3 ">
-                    {project.name}
-                  </h3>
 
-                  <p className="text-sm text-gray-300 mb-4">
+                  {/* <p className="text-sm text-gray-300 mb-4">
                     {project.description}
-                  </p>
+                  </p> */}
 
-                  <div className="relative w-full aspect-[2/1] mb-[55px]">
+                  <div className="relative w-full aspect-[2/1]">
                     <Image
                       src={project.image}
                       alt={project.name}
                       fill
-                      className="object-contain transition-opacity duration-500"
+                      className="object-contain transition-opacity duration-500 rounded-xl"
                       priority
                     />
                   </div>
+
+                  <h3 className="text-lg font-semibold text-white mb-2 w-fit py-3 ">
+                    {project.name}
+                  </h3>
 
                   {project.id === "lowcoder" ? (
                     <a
                       href="https://www.lowcoder.cloud/"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="absolute bottom-4 left-4 right-4 text-center px-4 py-2 border border-red-500/30 text-red-400/80 rounded-lg hover:bg-red-500/10 transition bg-black/40"
+                      className="text-center px-4 py-2 border border-red-500/30 text-red-400/80 rounded-lg hover:bg-red-500/10 transition bg-black/40"
                     >
                       See Details
                     </a>
                   ) : (
                     <Link
                       href={`/portfolio/${project.id}`}
-                      className="absolute bottom-4 left-4 right-4 text-center px-4 py-2 border border-red-500/30 text-red-400/80 rounded-lg hover:bg-red-500/10 transition bg-black/40"
+                      className="text-center px-4 py-2 border border-red-500/30 text-red-400/80 rounded-lg hover:bg-red-500/10 transition bg-black/40"
                     >
                       See Details
                     </Link>
@@ -224,10 +227,8 @@ export default function LatestProjects() {
             </motion.div>
           </AnimatePresence>
 
-        </div>
-
-        {/* ARROWS */}
-        <div className="absolute top-1/2 left-[0px] right-[0px] -translate-y-1/2 flex justify-between px-2 pointer-events-none">
+          {/* ARROWS */}
+        <div className="absolute top-1/2 left-[-20px] right-[-20px] -translate-y-1/2 flex justify-between pointer-events-none">
           <button
             onClick={() => paginate(-1)}
             disabled={page === 0}
@@ -248,6 +249,10 @@ export default function LatestProjects() {
             </svg>
           </button>
         </div>
+
+        </div>
+
+        
       </div>
     </section>
   );
