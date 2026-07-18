@@ -111,7 +111,7 @@ export default function LatestProjects() {
 
   const totalPages = Math.ceil(projects.length / itemsPerPage);
 
-  // ✅ RESPONSIVE DETECTION for all devices
+  // ✅ RESPONSIVE DETECTION
   useEffect(() => {
     const update = () => {
       if (window.innerWidth < 768) {
