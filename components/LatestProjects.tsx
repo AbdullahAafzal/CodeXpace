@@ -6,7 +6,7 @@ import Link from "next/link";
 import { AnimatePresence, motion } from "framer-motion";
 
 import codaImage from "../assets/projects/Coda.png";
-import HT from "../assets/projects/H-T.png";
+import HT from "../assets/projects/HT1.png";
 import Liberty from "../assets/projects/Liberty.png";
 import Luminary from "../assets/projects/Luminary.png";
 import telegraphyImage from "../assets/projects/Palplug.png";
@@ -111,7 +111,7 @@ export default function LatestProjects() {
 
   const totalPages = Math.ceil(projects.length / itemsPerPage);
 
-  // ✅ RESPONSIVE DETECTION
+  // ✅ RESPONSIVE DETECTION for all devices
   useEffect(() => {
     const update = () => {
       if (window.innerWidth < 768) {
