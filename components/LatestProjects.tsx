@@ -6,7 +6,7 @@ import Link from "next/link";
 import { AnimatePresence, motion } from "framer-motion";
 
 import codaImage from "../assets/projects/Coda.png";
-import HT from "../assets/projects/h-t.png";
+import HT from "../assets/projects/H-T.png";
 import Liberty from "../assets/projects/Liberty.png";
 import Luminary from "../assets/projects/Luminary.png";
 import telegraphyImage from "../assets/projects/Palplug.png";
