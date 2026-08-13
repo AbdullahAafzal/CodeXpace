@@ -6,7 +6,7 @@ import Link from "next/link";
 import { AnimatePresence, motion } from "framer-motion";
 
 import codaImage from "../assets/projects/Coda.png";
-import HT from "../assets/projects/H-T.png";
+import HT from "../assets/projects/HT1.png";
 import Liberty from "../assets/projects/Liberty.png";
 import Luminary from "../assets/projects/Luminary.png";
 import telegraphyImage from "../assets/projects/Palplug.png";
@@ -24,84 +24,96 @@ const projects = [
     name: "Yunuak",
     description:
       "Yunuak is a next-gen enterprise solutions company empowering organizations with digital transformation, process engineering, and cloud-based business tools. Our platforms deliver workflow automation, real-time analytics, and cross-device accessibility. YUNUAK helps businesses achieve operational efficiency, scalability, and smarter decision-making.",
-    image: yunakImage
+    image: yunakImage,
+    caseStudy: true
   },
   {
     id: "ftf",
     name: "Forward Thinking Fitness",
     description:
       "Forward Fitness Thinking is a comprehensive wellness and fitness platform enabling users to track menstrual cycles, habits, and nutrition, while earning rewards. The platform offers personalized workout plans, real-time performance insights, and seamless multi-device integration. Users experience a fully personalized, engaging, and results-driven health journey.",
-    image: ftfImage
+    image: ftfImage,
+    caseStudy: true
   },
   {
     id: "ht",
     name: "Hammers & Tounges",
     description:
       "Hammers & Tongues Auction is a digital auction platform enabling users to bid, buy, and sell products in real time with secure transactions and transparent pricing. We built a system featuring live bidding, smart inventory management, and instant notifications to enhance user engagement. With seamless mobile access and scalable architecture, the platform delivers a fast, secure, and modern auction experience.",
-    image: HT
+    image: HT,
+    caseStudy: true
   },
   {
     id: "quantummind",
     name: "Quantum Mind",
     description:
       "Quantum Mind is a modern personal development platform that empowers users to enhance their mindset, boost productivity, and achieve their goals through interactive learning, progress tracking, and personalized growth experiences. Designed for accessibility and engagement, it helps users build positive habits and unlock their true potential.",
-    image: quantummind
+    image: quantummind,
+    caseStudy: true
   },
   {
     id: "loyalific",
     name: "Loyalific",
     description:
       "Build digital loyalty cards that keep customers coming back. Reward repeat visits, gain valuable customer insights, and send targeted updates and offers directly to your customer's mobile wallets. All without requiring them to download an app.",
-    image: loyalific
+    image: loyalific,
+    caseStudy: true
   },
   {
     id: "womengem",
     name: "Women's Gem",
     description:
       "WomenGem is a comprehensive platform designed specifically for women, offering resources, community support, and personalized content to empower and inspire. The platform features expert advice, wellness tools, and a supportive community to help women achieve their goals and live their best lives.",
-    image: womengem
+    image: womengem,
+    caseStudy: true
   },
   {
     id: "liberty",
     name: "Liberty91",
     description:
       "Liberty91 is an AI-powered threat intelligence platform that analyzes real-time cybersecurity data tailored to your organization. It monitors news, dark-web feeds, and vulnerability reports, delivering instant alerts and actionable insights. Liberty91 enables proactive threat detection, risk reduction, and faster cybersecurity response.",
-    image: Liberty
+    image: Liberty,
+    caseStudy: false
   },
   {
     id: "lowcoder",
     name: "Low Coder",
     description:
       "Low Coder is a modern low-code development platform that enables businesses to build applications quickly with minimal coding expertise. The platform provides drag-and-drop interfaces, automation tools, and multi-device integration. The result is faster app deployment, reduced development costs, and scalable digital solutions.",
-    image: coder
+    image: coder,
+    caseStudy: false
   },
   {
     id: "luminary",
     name: "Luminary Health",
     description:
       "Luminary Health is an innovative digital health platform empowering users and providers with personalized healthcare solutions and wellness management tools. We built a system offering telemedicine access, health tracking, and seamless multi-device integration. The result is accessible, data-driven, and patient-centric healthcare for better outcomes.",
-    image: Luminary
+    image: Luminary,
+    caseStudy: false
   },
   {
     id: "spectra",
     name: "Spectra Solar",
     description:
       "Spectra Solar delivers clean, renewable solar energy solutions for businesses and homes. We design and deploy scalable solar installations, integrate smart energy management systems, and monitor performance to maximize energy savings. The result is reliable solar power, reduced carbon footprint, and long-term sustainability.",
-    image: codaImage
+    image: codaImage,
+    caseStudy: false
   },
   {
     id: "palplug",
     name: "Palplug",
     description:
       "Palplug is a next-gen professional networking platform connecting talent, recruiters, and businesses worldwide. Create rich profiles, share expertise, post jobs, and build meaningful connections — all with intuitive networking, real-time messaging, and smart discovery tools. Palplug empowers professionals and companies to grow, collaborate, and succeed in a modern, connected ecosystem.",
-    image: telegraphyImage
+    image: telegraphyImage,
+    caseStudy: false
   },
   {
     id: "dillon",
     name: "Dillon",
     description:
       "Dillon Gas is a next-gen e-commerce and delivery platform that connects businesses with customers seamlessly. It offers real-time rider tracking via maps, integrated digital wallets, and secure payment options. The result is faster deliveries, smooth transactions, and enhanced customer experience.",
-    image: Dillion
+    image: Dillion,
+    caseStudy: false
   }
 ];
 
@@ -204,7 +216,16 @@ export default function LatestProjects() {
                     {project.name}
                   </h3>
 
-                  {project.id === "lowcoder" ? (
+                  {project.caseStudy && (
+                    <Link
+                      href={`/portfolio/${project.id}`}
+                      className="text-center px-4 py-2 border border-red-500/30 text-red-400/80 rounded-lg hover:bg-red-500/10 transition bg-black/40"
+                    >
+                      See Details
+                    </Link>
+                  )}
+
+                  {project.id === "lowcoder" && (
                     <a
                       href="https://www.lowcoder.cloud/"
                       target="_blank"
@@ -213,13 +234,6 @@ export default function LatestProjects() {
                     >
                       See Details
                     </a>
-                  ) : (
-                    <Link
-                      href={`/portfolio/${project.id}`}
-                      className="text-center px-4 py-2 border border-red-500/30 text-red-400/80 rounded-lg hover:bg-red-500/10 transition bg-black/40"
-                    >
-                      See Details
-                    </Link>
                   )}
 
                 </div>
