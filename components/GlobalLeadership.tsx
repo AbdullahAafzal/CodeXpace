@@ -2,7 +2,8 @@
 import React, { useState, useEffect, useRef } from "react";
 
 const slides = [
-  { title: "Meenam Afzal", text: "CEO", image: "Meenam-afzal.jpeg" },
+  { title: "Meenam Afzal", text: "Founder", image: "Meenam-afzal.jpeg" },
+  { title: "Ghada Al Ghrabawi", text: "Co-Founder", image: "Ghada1.png" },
   { title: "Abdullah", text: "Chief Systems Architect", image: "Abdulllah.jpeg" },
   { title: "Ali Reyan", text: "Chief Technology Officer", image: "ali-rehan.jpeg" },
   { title: "Ans Mustafa", text: "Senior Backend Developer", image: "ans.png" },
