@@ -1,80 +1,16 @@
 "use client";
-import React, { useState, useEffect, useRef } from "react";
+import React from "react";
 
-const slides = [
+const leadership = [
   { title: "Meenam Afzal", text: "Founder", image: "Meenam-afzal.jpeg" },
   { title: "Ghada Al Ghrabawi", text: "Co-Founder", image: "Ghada1.png" },
-  { title: "Abdullah", text: "Chief Systems Architect", image: "Abdulllah.jpeg" },
-  { title: "Ali Reyan", text: "Chief Technology Officer", image: "ali-rehan.jpeg" },
-  { title: "Ans Mustafa", text: "Senior Backend Developer", image: "ans.png" },
-  { title: "Asad Ali", text: "Chief Sales Officer and Co-founder", image: "Asad-ali.jpeg" },
-  { title: "Talha Zahid", text: "Chief Operational Officer and Co-founder", image: "talha-zahid.jpeg" }
 ];
 
 function GlobalLeadership() {
-  const [current, setCurrent] = useState(0);
-  const [cardsToShow, setCardsToShow] = useState(3);
-  const [containerWidth, setContainerWidth] = useState(0);
-  const containerRef = useRef<HTMLDivElement>(null);
-
-  const GAP = 24;
-
-  // precise resize handling
-  useEffect(() => {
-    const updateLayout = () => {
-      let newCardsToShow = 3;
-      if (window.innerWidth < 640) {
-        newCardsToShow = 1;
-      } else if (window.innerWidth < 1024) {
-        newCardsToShow = 2;
-      }
-
-      setCardsToShow(newCardsToShow);
-
-      // Ensure we don't end up on an empty space when resizing up
-      setCurrent(prev => {
-        const maxIndex = slides.length - newCardsToShow;
-        return prev > maxIndex ? Math.max(0, maxIndex) : prev;
-      });
-
-      if (containerRef.current) {
-        setContainerWidth(containerRef.current.offsetWidth);
-      }
-    };
-
-    updateLayout();
-    window.addEventListener("resize", updateLayout);
-    return () => window.removeEventListener("resize", updateLayout);
-  }, []);
-
-  // Update container width on initial mount if ref is ready
-  useEffect(() => {
-    if (containerRef.current && containerWidth === 0) {
-      setContainerWidth(containerRef.current.offsetWidth);
-    }
-  }, [containerWidth]);
-
-  const nextSlide = () => {
-    if (current < slides.length - cardsToShow) {
-      setCurrent(prev => prev + 1);
-    }
-  };
-
-  const prevSlide = () => {
-    if (current > 0) {
-      setCurrent(prev => prev - 1);
-    }
-  };
-
-  const getTranslateX = () => {
-    if (containerWidth === 0) return 0;
-    const cardWidth = (containerWidth - GAP * (cardsToShow - 1)) / cardsToShow;
-    return -(cardWidth + GAP) * current;
-  };
 
   return (
     <section className="relative w-full py-16 bg-black overflow-hidden">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
 
         <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-12 text-white">
           Our Global{" "}
@@ -83,75 +19,35 @@ function GlobalLeadership() {
           </span>
         </h2>
 
-        {/* SLIDER */}
-        <div className="overflow-hidden" ref={containerRef}>
-          <div
-            className="flex transition-transform duration-500 ease-out"
-            style={{
-              gap: `${GAP}px`,
-              transform: `translateX(${getTranslateX()}px)`
-            }}
-          >
-            {slides.map((slide, index) => (
+        {/* LEADERSHIP CARDS - CENTERED GRID */}
+        <div className="flex justify-center">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 max-w-4xl w-full">
+            {leadership.map((person, index) => (
               <div
                 key={index}
-                className="bg-[#111] rounded-xl overflow-hidden border border-red-500/20 flex-shrink-0 group"
-                style={{
-                  width: `calc((100% - ${(cardsToShow - 1) * GAP}px) / ${cardsToShow})`
-                }}
+                className="bg-[#111] rounded-xl overflow-hidden border border-red-500/20 hover:border-red-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-red-500/20 group"
               >
 
-                <div className="relative w-full h-[380px] sm:h-[380px] lg:h-[400px] overflow-hidden bg-black/20">
+                <div className="relative w-full h-[350px] sm:h-[380px] lg:h-[400px] overflow-hidden bg-black/20 group-hover:scale-105 transition-transform duration-300">
                   <img
-                    src={slide.image}
-                    alt={slide.title}
+                    src={person.image}
+                    alt={person.title}
                     className="w-full h-full object-cover object-[center_top]"
                   />
                 </div>
 
-                <div className="p-5 md:p-6 text-center sm:text-left flex flex-col items-center sm:items-start">
-                  <h3 className="text-xl md:text-2xl font-bold text-white mb-2">
-                    {slide.title}
+                <div className="p-6 md:p-8 text-center">
+                  <h3 className="text-2xl md:text-3xl font-bold text-white mb-3 group-hover:text-red-400 transition-colors">
+                    {person.title}
                   </h3>
-                  <p className="text-red-400 font-medium text-sm md:text-base border-t border-red-500/20 pt-2 inline-block sm:border-none sm:pt-0">
-                    {slide.text}
+                  <p className="text-red-400 font-semibold text-base md:text-lg">
+                    {person.text}
                   </p>
                 </div>
               </div>
             ))}
           </div>
         </div>
-
-        {/* ARROWS */}
-        <button
-          onClick={prevSlide}
-          disabled={current === 0}
-          className={`
-            absolute 
-            left-0 md:left-2 
-            top-1/2 -translate-y-1/2 
-            bg-black/60 backdrop-blur-md border border-red-500/40 
-            text-white p-2 md:p-3 rounded-full z-10 transition-all
-            ${current === 0 ? 'opacity-30 cursor-not-allowed' : 'hover:bg-red-500/20 hover:text-red-400 hover:scale-110 cursor-pointer'}
-          `}
-        >
-          <svg className="w-5 h-5 md:w-6 md:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" /></svg>
-        </button>
-
-        <button
-          onClick={nextSlide}
-          disabled={current >= slides.length - cardsToShow}
-          className={`
-            absolute 
-            right-0 md:right-2 
-            top-1/2 -translate-y-1/2 
-            bg-black/60 backdrop-blur-md border border-red-500/40 
-            text-white p-2 md:p-3 rounded-full z-10 transition-all
-            ${current >= slides.length - cardsToShow ? 'opacity-30 cursor-not-allowed' : 'hover:bg-red-500/20 hover:text-red-400 hover:scale-110 cursor-pointer'}
-          `}
-        >
-          <svg className="w-5 h-5 md:w-6 md:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
-        </button>
 
       </div>
     </section>
