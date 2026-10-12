@@ -72,7 +72,7 @@ export default function WorkWithUs() {
               ))}
             </div>
 
-            {/* Image with Overlay Text Box */}
+            {/* Image with Overlay Text Box haseeb */}
             <div className="relative rounded-2xl overflow-hidden aspect-[4/3]">
               <div 
                 key={`image-${selectedOption}`}
