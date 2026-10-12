@@ -3,7 +3,7 @@ import React from "react";
 
 const leadership = [
   { title: "Meenam Afzal", text: "Founder (USA)", image: "Meenam-afzal.png" },
-  { title: "Ghada Al Ghrabawi", text: "Co-Founder (KSA)", image: "Ghada1.png" },
+  { title: "Ghada Al Ghrabawi", text: "Co-Founder (KSA)", image: "Ghada.png" },
 ];
 
 function GlobalLeadership() {
