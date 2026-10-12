@@ -48,12 +48,12 @@ export default function AboutCompany() {
         c += 1;
         setCountries(c);
       }
-      if (y < 8) {
+      if (y < 12) {
         y += 1;
         setYears(y);
       }
 
-      if (p >= 300 && c >= 23 && y >= 8) {
+      if (p >= 300 && c >= 23 && y >= 12) {
         clearInterval(interval);
       }
     }, 30);
