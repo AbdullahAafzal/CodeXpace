@@ -4,7 +4,7 @@ import React from "react";
 const leadership = [
   {
     title: "Meenam Afzal",
-    text: "CEO (USA)",
+    text: "CEO",
     image: "Meenam-afzal.png",
     linkedin: "https://www.linkedin.com/in/meenamafzalofficial/?isSelfProfile=false",
   },
